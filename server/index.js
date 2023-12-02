@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
+import healthApi from "./controllers/health.js";
+import {postSignUpApi} from "./controllers/signUp.js";
 
 const app = express();
 app.use(express.json());
@@ -14,9 +16,11 @@ const MongoDBConn = async ()=>{
 };
 MongoDBConn();
 
-app.get('/api/healths',healthApi)
+app.get('/api/v1/healths',healthApi)
 
-app.post('/api/v1/logins',postLoginApi)
+app.post('/api/v1/signups',postSignUpApi)
+
+
 
 const PORT = process.env.PORT || 5000;
 
