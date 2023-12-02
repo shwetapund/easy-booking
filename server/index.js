@@ -14,12 +14,9 @@ const MongoDBConn = async ()=>{
 };
 MongoDBConn();
 
-app.get('/api/healths',(req,res)=>{
-    res.json({
-        success:true,
-        message:'All Good😊'
-    })
-})
+app.get('/api/healths',healthApi)
+
+app.post('/api/v1/logins',postLoginApi)
 
 const PORT = process.env.PORT || 5000;
 
