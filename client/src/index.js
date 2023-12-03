@@ -7,6 +7,8 @@ import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
 import Booking from "./views/Booking/Booking";
 import OrderBy from "./views/OrderBy/OrderBy";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
