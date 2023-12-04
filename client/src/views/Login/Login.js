@@ -15,7 +15,7 @@ const response = await axios.post('/api/v1/logins',{
 alert(response?.data?.message)
 if(response?.data?.success){
     localStorage.setItem('user', JSON.stringify(response?.data?.data))
-    window.location.href='/'
+   window.location.href='/'
 }
     }
     return (
