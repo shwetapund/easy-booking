@@ -11,7 +11,7 @@ app.use(express.json());
 const MongoDBConn = async ()=>{
     const conn = await mongoose.connect(process.env.MONGODB_URL)
     if(conn){
-        console.log('server is running ')
+        console.log('server is running')
     }
 };
 MongoDBConn();
