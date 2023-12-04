@@ -12,12 +12,12 @@ const UserSchema = new Schema({
     },
     password:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     mobileNo:{
         type:Number,
         required:true,
+        unique:true
     },
     gender:{
         type:String,
