@@ -8,7 +8,7 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const login = async ()=>{
-const response = await axios.post('/api/v1/logins',{
+    const response = await axios.post('/api/v1/logins',{
     email:email,
     password:password
 })
