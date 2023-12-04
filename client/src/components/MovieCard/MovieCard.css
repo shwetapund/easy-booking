@@ -1,0 +1,27 @@
+.movie-Contanier{
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.img{
+    height: 340px;
+    width: 230px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom:2px solid black ;
+}
+.rating{
+   background: linear-gradient(rgba(0, 0, 0, 0.404),rgba(0, 0, 0, 0.863));
+    width:100%;
+    border-radius: 0 0 10px 10px;
+    color: white;
+}
+.rating-text{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.movie-title{
+    font-size: 20px;
+    margin: 0 15px;
+}
