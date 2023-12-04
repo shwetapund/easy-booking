@@ -1,11 +1,23 @@
 import react, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, json } from 'react-router-dom';
 import './Login.css';
+import axios from 'axios';
 
 function Login() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const login = async ()=>{
+const response = await axios.post('/api/v1/logins',{
+    email:email,
+    password:password
+})
+alert(response?.data?.message)
+if(response?.data?.success){
+    localStorage.setItem('user', JSON.stringify(response?.data?.data))
+    window.location.href='/'
+}
+    }
     return (
         <>
             <div className='loginsignup'>
@@ -28,9 +40,9 @@ function Login() {
                             placeholder='enter your password'
                             className='inputfields' />
 
-                        <button type='button' >login</button>
+                        <button type='button' onClick={login} >login</button>
 
-                        <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signup' className='loginsignup-link'>Signup</Link>
+                        <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signUp' className='loginsignup-link'>Signup</Link>
                         </span></p>
                     </div>
                 </div>
