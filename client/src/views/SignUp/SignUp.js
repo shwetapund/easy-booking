@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import  { useState } from 'react';
 import './SignUp.css';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
@@ -84,7 +84,7 @@ window.location.href='/login'
                              name='gender' 
                              id='male' 
                              className='radio'
-                             checked={gender=='male'} 
+                             checked={gender==='male'} 
                              onClick={()=>{
                                 setGender('male')
                              }} />
@@ -94,7 +94,7 @@ window.location.href='/login'
                             name='gender' 
                             id='female'
                              className='radio' 
-                             checked={gender=='female'}
+                             checked={gender==='female'}
                              onClick={()=>{
                                 setGender('female')
                              }}/>
