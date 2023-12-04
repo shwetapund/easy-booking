@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 9e921eeda5469ccc3d15490cb856e5307546695f
 import './Home.css';
 import Navbar from './../../components/Navbar/Navbar'
 import { useEffect, useState } from 'react';
