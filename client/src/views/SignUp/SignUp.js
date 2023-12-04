@@ -1,6 +1,7 @@
 import react, { useState } from 'react';
 import './SignUp.css';
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -8,6 +9,38 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const [mobileNo, setMobileNo] = useState('')
     const [gender, setGender] = useState('female')
+    const signup = async()=> {
+if(!name){
+    alert('name is required');
+    return
+}
+
+if(!email){
+    alert('email is required');
+    return
+}
+
+if(!password){
+    alert('password is required');
+    return
+}
+
+if(!mobileNo){
+    alert('mobile no is required');
+    return
+}
+const response = await axios.post('/api/v1/signups',{
+    email:email,
+    name:name,
+    password:password,
+mobileNo:mobileNo,
+gender:gender
+})
+alert(response?.data?.message)
+if(response?.data?.success){
+window.location.href='/login'
+}
+    }
 
     return (
         <>
@@ -47,13 +80,27 @@ function SignUp() {
                             placeholder='enter your mobile no'
                             className='inputfields' />
                         <div>
-                            <input type='radio' name='gender' id='male' className='radio'/>
+                            <input type='radio'
+                             name='gender' 
+                             id='male' 
+                             className='radio'
+                             checked={gender=='male'} 
+                             onClick={()=>{
+                                setGender('male')
+                             }} />
                             <label htmlFor='male'>male</label>
 
-                            <input type='radio' name='gender' id='female' className='radio' />
+                            <input type='radio' 
+                            name='gender' 
+                            id='female'
+                             className='radio' 
+                             checked={gender=='female'}
+                             onClick={()=>{
+                                setGender('female')
+                             }}/>
                             <label htmlFor='female' >female</label>
                         </div>
-                        <button type='button'  >signup</button>
+                        <button type='button' onClick={signup} >signup</button>
                         <p className='loginsignup-login'>already have an account? <span className='loginsingup-login-span'><Link to='/login' className='loginsignup-link'>login</Link>
                         </span></p>
                     </div>
