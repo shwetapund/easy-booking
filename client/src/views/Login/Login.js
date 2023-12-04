@@ -1,5 +1,5 @@
-import react, { useState } from 'react';
-import { Link, json } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const login = async ()=>{
-const response = await axios.post('/api/v1/logins',{
+    const response = await axios.post('/api/v1/logins',{
     email:email,
     password:password
 })
