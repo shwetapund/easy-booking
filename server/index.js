@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import healthApi from "./controllers/health.js";
 import {postSignUpApi, postLoginApi} from "./controllers/signUp.js";
-import { addMovie, getAllMovies } from './controllers/movies.js';
+import { addMovie, getAllMovies, searchMovie } from './controllers/movies.js';
 
 const app = express();
 app.use(express.json());
@@ -26,6 +26,8 @@ app.post('/api/v1/logins',postLoginApi)
 app.post('/api/v1/movie',addMovie)
 
 app.get('/api/v1/movies',getAllMovies)
+
+app.get('/app/v1/search/movie',searchMovie)
 
 
 
