@@ -9,6 +9,7 @@ import {addMovie, getAllMovies, searchMovie ,getuserbook,bookmovie} from './cont
 
 
 import path from 'path';
+import { postAdminApi, postAdminLoginApi } from './controllers/adminSignup.js';
 
 const app = express();
 app.use(express.json());
@@ -27,6 +28,10 @@ MongoDBConn();
  app.post('/api/v1/signups',postSignUpApi)
 
  app.post('/api/v1/logins',postLoginApi)
+
+app.post('/api/v1/admin/signups',postAdminApi)
+
+app.post('/api/v1/admin/logins',postAdminLoginApi)
 
 app.post('/api/v1/movie',addMovie)
 
