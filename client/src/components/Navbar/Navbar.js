@@ -2,8 +2,36 @@ import react, {useState, useEffect} from 'react';
 import "./Navbar.css";
 import {Link} from "react-router-dom";
 import logoutImg from "./../../assets/shutdown.png"
+import axios from 'axios';
 
 function Navbar() {
+  const [address,setAddress]=useState('')
+
+  const fetchLocation = () => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+
+        try {
+          const response = await axios.get(apiUrl);
+          if (response.data.display_name) {
+            const formattedAddress = response.data.display_name;
+            setAddress(formattedAddress);
+          } else {
+            setAddress('Address not found');
+          }
+        } catch (error) {
+          console.error('Error fetching address:', error);
+          setAddress('Error fetching address');
+        }
+      });
+    } else {
+      alert('Geolocation is not avilable in browser', 'warning', 3000);
+    }
+  }
 
   return (
 
@@ -33,8 +61,8 @@ function Navbar() {
 
           </ul>
           <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search Movie" aria-label="Search"/>
-        <button class="btn btn-outline-primary" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" value={address}/>
+        <button class="btn btn-outline-primary" type="button" onClick={fetchLocation}>Search</button>
         </form>
         {/* <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search Prefered" aria-label="Search"/>
