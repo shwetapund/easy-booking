@@ -7,6 +7,7 @@ import {postSignUpApi, postLoginApi} from "./controllers/signUp.js";
 
 import { addMovie, getAllMovies, searchMovie } from './controllers/movies.js';
 import path from 'path';
+import { postAdminApi, postAdminLoginApi } from './controllers/adminSignup.js';
 
 const app = express();
 app.use(express.json());
@@ -25,6 +26,10 @@ app.get('/api/v1/healths',healthApi)
 app.post('/api/v1/signups',postSignUpApi)
 
 app.post('/api/v1/logins',postLoginApi)
+
+app.post('/api/v1/admin/signups',postAdminApi)
+
+app.post('/api/v1/admin/logins',postAdminLoginApi)
 
 app.post('/api/v1/movie',addMovie)
 
