@@ -1,5 +1,7 @@
 import { model } from "mongoose";
 import Admin from "../models/Admin";
+
+
 const postAdminApi = async (req,res)=>{
 const {name,email,mobileNo,password} = req.body
 

@@ -63,7 +63,7 @@ const searchMovie= async(req,res)=>{
 }
 
 const bookmovie = async (req, res) => {
-    const { user, movie,ticketno,type,theatrename,seatno,date,time } = req.body;
+    const { user, movie,ticketno,type,theatrename,seatno,date,time} = req.body;
 
     const books = new Book({
         user, movie,ticketno,type,theatrename,seatno,date,time
@@ -82,7 +82,6 @@ const bookmovie = async (req, res) => {
             message: e.message
         })
     }
-
 }
 
 const getuserbook =  async (req, res) => {
