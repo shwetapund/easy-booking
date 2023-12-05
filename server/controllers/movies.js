@@ -46,7 +46,23 @@ const getAllMovies= async(req,res)=>{
     })
    }
 }
+const getMovieById = async (req,res)=>{
+   try{
+    const {id} = req.params;
 
+    const fetchMovie = await Movie.findOne({_id:id})
+    res.json({
+        success:true,
+        data:fetchMovie,
+        message:'successfully fetch movie '
+    })
+   }catch(err){
+    res.json({
+        success:false,
+        message:err.message
+    })
+   }
+}
 
 const searchMovie= async(req,res)=>{
     const {q}=req.query
@@ -94,4 +110,6 @@ const getuserbook =  async (req, res) => {
       })
 }
 
-export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie}
+export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie, getMovieById}
+
+

@@ -5,7 +5,7 @@ dotenv.config();
 import healthApi from "./controllers/health.js";
 import {postSignUpApi, postLoginApi} from "./controllers/signUp.js";
 
-import {addMovie, getAllMovies, searchMovie ,getuserbook,bookmovie} from './controllers/movies.js';
+import {addMovie, getAllMovies, searchMovie ,getuserbook,bookmovie, getMovieById} from './controllers/movies.js';
 
 
 import path from 'path';
@@ -43,6 +43,7 @@ app.get('/api/v1/user/bookings/:id', getuserbook)
 
 app.post('/api/v1/bookmovie', bookmovie)
 
+app.get('/api/v1/bookmovie/:id',getMovieById)
 
 
 const __dirname = path.resolve();
