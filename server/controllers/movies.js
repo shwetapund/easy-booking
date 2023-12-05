@@ -47,4 +47,19 @@ const getAllMovies= async(req,res)=>{
 }
 
 
-export {addMovie,getAllMovies}
+const searchMovie= async(req,res)=>{
+    const {q}=req.query
+    const search= await Movie.find({title:{$regex:q,$options:"i"}})
+    if(!search){
+        return res.status(404).send("no result")
+    }
+    res.json({
+        success:true,
+        data:search,
+        message:'Search Successful'
+    })
+
+}
+
+
+export {addMovie,getAllMovies,searchMovie}
