@@ -6,6 +6,7 @@ import MovieCard from '../../components/MovieCard/MovieCard';
 
 function Home(){
    const [movie,setMovie]=useState([])
+   const [search,setSearch]=useState('')
 
    const loadMovie = async()=>{
     try{
@@ -16,6 +17,21 @@ function Home(){
     }
    }
 
+   const searchMovie = async()=>{
+    if(search===''){
+      loadMovie()
+      return
+    }
+    try{
+      const responce= await axios.get(`/app/v1/search/movie?q=${search}`)
+      setMovie(responce?.data?.data)
+    }catch(err){
+      console.log(err.message)
+    }
+   }
+
+   useEffect(()=>{searchMovie()},[search])
+
 
    useEffect(()=>{
      loadMovie()
@@ -23,6 +39,13 @@ function Home(){
     return(
         <>
         <Navbar/>
+        <input
+           value={search}
+           onChange={e => setSearch(e.target.value)}
+           type="text"
+           placeholder="Search Movies"
+           className='input-box'
+        />
             <div className='show-movie'>
                 {
                   movie?.map((obj,i)=>{
