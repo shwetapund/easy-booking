@@ -1,11 +1,12 @@
-import Movie from "../models/Movie.js";
+import Movie from "./../models/Movie.js";
+import Book from "../models/Book.js";
 
-const addMovie= async (req,res)=>{
+const addMovie = async (req,res)=>{
     const {title,Imageurl,duration,releaseDate,movieType,rating,description}=req.body;
     if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
         res.status(400).send({msg:"All fields are required"})
     }
-    const addMovie= new Movie({
+    const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
         duration:duration,
@@ -16,7 +17,7 @@ const addMovie= async (req,res)=>{
     })
 
     try{
-       const movie= await addMovie.save();
+       const movie= await adddMovie.save();
        res.json({
         success:true,
         data:movie,
@@ -61,5 +62,37 @@ const searchMovie= async(req,res)=>{
 
 }
 
+const bookmovie = async (req, res) => {
+    const { user, movie,ticketno,type,theatrename,seatno,date,time } = req.body;
 
-export {addMovie,getAllMovies,searchMovie}
+    const books = new Book({
+        user, movie,ticketno,type,theatrename,seatno,date,time
+    })
+
+    try {
+        const saveBooking = await books.save();
+        res.json({
+            success: true,
+            Order: saveBooking,
+            message: " Ticket Book succesfully..!"
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            message: e.message
+        })
+    }
+
+}
+
+const getuserbook =  async (req, res) => {
+    const { id } = req.params
+    const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
+    res.json({
+        success:true,
+        data:findBooking,
+        message:" Booking fetch successfully..!"  
+      })
+}
+
+export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie}
