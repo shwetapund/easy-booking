@@ -11,8 +11,13 @@ function Booking() {
         const getUser = JSON.parse(localStorage.getItem('user') || '{}');
         const userstore = getUser._id;
 
+
         try{
             const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
+
+
+        const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
+
 
             setBooking(response?.data?.data);
         }catch(err){

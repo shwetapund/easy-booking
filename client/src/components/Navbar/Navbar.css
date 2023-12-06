@@ -5,5 +5,19 @@
     color:rgb(0, 255, 21);
 }
 .color:hover{
-    color: blue !important;
+    color: red !important;
+}
+.color{
+    color: white !important;
+    font-weight: bold;
+}
+.color-bg{
+    background-color:#000066 !important;
+}
+.logoutimg{
+    height: 30px;
+    margin-left: 10px;
+}
+.logout-text{
+    color: white;
 }
