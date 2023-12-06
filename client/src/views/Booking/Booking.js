@@ -1,11 +1,14 @@
 import './Booking.css';
 import Navbar from "./../../components/Navbar/Navbar";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 //user, movie,ticketno,type,theatrename,seatno,date,time
 function Booking() {
+    const { id } = useParams();
+
     const [user, setUser] = useState('');
-    const [movie, setMovie] = useState('');
+    const [movie, setMovie] = useState({});
     const [ticketno, setTicketno] = useState('');
     const [type, setType] = useState('');
     const [theatrename, setTheatrename] = useState('');
@@ -13,42 +16,34 @@ function Booking() {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
 
-    const loadMovie = async ()=>{
-        const response = await axios.get(``)
+    const loadMovie = async () => {
+        const response = await axios.get(`/api/v1/bookmovie/${id}`)
+        setMovie(response?.data?.data);
+
     }
-   
+    useEffect(() => {
+        loadMovie();
+    })
     return (
         <>
             <Navbar />
             <div className='booking-container'>
                 <h3 className='text-center pt-3'>Easy Booking</h3>
+
+        
+
                 <div className='main-booking-container'>
+                    <div>
+                    <img src={movie.Imageurl} className='movie-img'/>
+                  <div className='d-flex movie-description '>
+                  <p >⭐{movie.rating}</p>
+                    <p>{movie.movieType}</p>
+                  </div>
+                    <h2 className='text-center'>{movie.title}</h2>
+              
+                    </div>
 
                     <div className='left-hand-container'>
-
-                        <div>
-                            <input
-                                type='text'
-                                className='form-handle'
-                                placeholder='enter your Name'
-                                value={user}
-                                onChange={(e) => {
-                                    setUser(e.target.value);
-                                }}
-                            />
-                        </div>
-
-                        <div>
-                            <input
-                                type='text'
-                                placeholder='enter Movie Name'
-                                className='form-handle'
-                                value={movie}
-                                onChange={(e) => {
-                                    setMovie(e.target.value)
-                                }}
-                            />
-                        </div>
 
                         <div>
                             <input
@@ -62,41 +57,46 @@ function Booking() {
                             />
                         </div>
 
-                <div className='d-flex'>
-                   <div className=''>
-                   <label className='d-flex fs-5 ms-2'>
-                            Type: </label>
-                   </div>
-                        <div className='ms-5 mt-1'>
-                            <input
-                                type='radio'
-                                name='gender'
-                                value={type}
-                                onClick={(e) => {
-                                    setType(e.target.value)
-                                }}
-                            /> <span className='type-text'>VIP : 500 Rs</span>
+                        <div className='d-flex'>
+                            <div className=''>
+                                <label className='d-flex fs-5 ms-2'>
+                                    Type: </label>
+                            </div>
+                            <div className='ms-5 mt-1'>
+                                <input
+                                    type='radio'
+                                    name='gender'
+                                    value={type}
+                                    onClick={(e) => {
+                                        setType(e.target.value)
+                                    }}
+                                /> <span className='type-text'>VIP : 500 Rs</span>
 
+                            </div>
                         </div>
-                        </div>       
-                        <div className='d-flex mt-4'>
+                        <div className='type-btn mt-0'>
+                            <div className='type-input'>
                             <input
+                                type='radio'
+                                name='gender'
+                                className='input-left'
+                                value={type}
+                                onClick={(e) => {
+                                    setType(e.target.value)
+                                }}
+                            /> &nbsp; <span className='type-text'>Golden: 300 Rs</span>
+                            </div>
+                            <div className='type-input'>
+                            <input
+                                className='input-left'
                                 type='radio'
                                 name='gender'
                                 value={type}
                                 onClick={(e) => {
                                     setType(e.target.value)
                                 }}
-                            /> &nbsp; <span className='type-text'>Golden: 300 Rs</span> 
-                            <input
-                                className='ms-4'
-                                type='radio'
-                                name='gender'
-                                value={type}
-                                onClick={(e) => {
-                                    setType(e.target.value)
-                                }}
-                            /> &nbsp; <span className='type-text'>Silver: 200 Rs</span> 
+                            /> &nbsp; <span className='type-text'>Silver: 200 Rs</span>
+                            </div>
                         </div>
                     </div>
 
@@ -162,8 +162,8 @@ function Booking() {
                     </div>
                 </div>
 
-                <button 
-                className='booking-btn'
+                <button
+                    className='booking-btn'
 
                 >Booking</button>
             </div>

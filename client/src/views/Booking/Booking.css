@@ -1,5 +1,5 @@
 .booking-container{
-    height: 500px;
+    height: 550px;
     width: 900px;
     box-shadow: 0px 0px 10px 1px rgb(245, 183, 183);
     display: block;
@@ -46,4 +46,31 @@ margin-top: 20px;
     margin: 60px auto;
     color: white;
     font-size: 25px;
+    position:relative;
+    bottom: 40px;
+}
+.movie-img{
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+.movie-description{
+    padding: 1px 10px;
+    background-color: lightgray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   font-size:17px;
+}
+.type-btn{
+    display: flex;
+    flex-direction: column;
+
+}
+.type-input{
+    display: flex;
+    margin-top: 20px;
+}
+.input-left{
+    margin-left: 100px;
+   
 }

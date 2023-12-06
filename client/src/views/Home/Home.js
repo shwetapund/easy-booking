@@ -49,8 +49,9 @@ function Home(){
             <div className='show-movie'>
                 {
                   movie?.map((obj,i)=>{
-                    const {Imageurl,rating,movieType,title}=obj
+                    const {_id,Imageurl,rating,movieType,title}=obj
                     return <MovieCard
+                    _id={_id}
                     key={i}
                       Imageurl={Imageurl}
                       rating={rating}
