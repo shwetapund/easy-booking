@@ -13,7 +13,7 @@ function MovieCard({ _id, Imageurl, rating, movieType, title,language }) {
           <span className="title">{title}</span>
            
           <span className="movietype">{movieType}</span>
-           <Link to={`/booking/${_id}`} className="link"> BOOK TICKET</Link>
+           <Link to={`/bookingTicket/${_id}`} className="link"> BOOK TICKET</Link>
         
         </div>
       </div>
