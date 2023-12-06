@@ -47,7 +47,7 @@ function Navbar() {
               <Link className="nav-link active  me-5 color" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/booking/:id">Booking</Link>
+              <Link className="nav-link active me-5 color" aria-current="page" to="/booking">Booking</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/about">About</Link>
