@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
-
+import Navbar from '../../components/Navbar/Navbar';
 function Login() {
 
     const [email, setEmail] = useState('')
@@ -20,6 +20,7 @@ if(response?.data?.success){
     }
     return (
         <>
+        <Navbar/>
             <div className='loginsignup'>
                 <div className='loginsinup-container  '>
                     <h1>login</h1>

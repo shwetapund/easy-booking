@@ -15,15 +15,18 @@ const movieSchema = new Schema({
   },
   releaseDate: {
     type: Date,
-    required: true,
+   
+  },
+  language:{
+type:String
   },
   movieType: {
     type: String,
-    required: true,
+   
   },
   rating: {
     type: Number,
-    required: true,
+   
   },
   description:{
     type:String

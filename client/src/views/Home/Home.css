@@ -2,7 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+background-color: #fff;
     margin: 1rem 0;
+    
+   
+   
 }
 .input-box{
     display: block;
@@ -11,4 +15,15 @@
     border: none;
     border-bottom: 2px solid black;
     padding: 5px 10px;
+}
+.now-showing{
+    font-size: 1.3rem ;
+    font-weight: 700;
+    padding-left: 1.4rem;
+}
+.view-all{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: black;
 }
