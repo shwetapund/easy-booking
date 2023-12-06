@@ -74,3 +74,33 @@ margin-top: 20px;
     margin-left: 100px;
    
 } */
+
+.img-booking{
+    height: 330px;
+    width: 300px;
+    margin-right: 100px;
+    border-radius: 10px;
+}
+.ALL-booking-container{
+    height: 400px;
+    width: 770px;
+    box-shadow: 0px 0px 10px 1px lightgray;
+    display: block;
+    margin: 60px auto;
+    border-radius: 10px;
+    display: flex;
+    padding: 35px 20px;
+    justify-content:center;
+}
+.booking-information{
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+.text-booking-info{
+    color: black;
+
+}
+.get-booking-text{
+    color: rgb(250, 93, 93);
+}

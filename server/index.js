@@ -46,6 +46,7 @@ app.post('/api/v1/bookmovie', bookmovie)
 app.get('/api/v1/bookmovie/:id',getMovieById)
 
 
+
 const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {

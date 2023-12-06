@@ -5,31 +5,52 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 //user, movie,ticketno,type,theatrename,seatno,date,time
 function Booking() {
-    // const { id } = useParams();
+    const [booking, setBooking] = useState([])
 
-    // const [user, setUser] = useState('');
-    // const [movie, setMovie] = useState({});
-    // const [ticketno, setTicketno] = useState('');
-    // const [type, setType] = useState('');
-    // const [theatrename, setTheatrename] = useState('');
-    // const [seatno, setSeatno] = useState('');
-    // const [date, setDate] = useState('');
-    // const [time, setTime] = useState('');
+    const loadBooking = async ()=>{
+        const getUser = JSON.parse(localStorage.getItem('user') || '{}');
+        const userstore = getUser._id;
 
-    // const loadMovie = async () => {
-    //     const response = await axios.get(`/api/v1/bookmovie/${id}`)
-    //     setMovie(response?.data?.data);
+        const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
 
-    // }
-    // useEffect(() => {
-    //     loadMovie();
-    // },[])
+        setBooking(response?.data?.data);
+    }
+    useEffect(()=>{
+        loadBooking();
+    },[])
 
     return (
+
         <>
             <Navbar />
-    
- <h1>All booking</h1>
+    {/* //user, movie,ticketno,type,theatrename,seatno,date,time */}
+            <h2 className='text-center mt-4'>All booking</h2>
+            {
+                booking?.map((bookingInstance, index)=>{
+                    const {movie,ticketno,type,theatrename,seatno,date,time} = bookingInstance;
+
+                    return(
+                        <div key={index} className='ALL-booking-container'>
+                            <div>
+                            <img src={movie.Imageurl} className='img-booking'/>
+                            </div>
+                            <div className='booking-information'>
+                            <p className='text-booking-info'>Ticket No:<span className='get-booking-text'>{ticketno}</span></p>
+
+                            <p className='text-booking-info'>Type:<span className='get-booking-text'>{type}</span> </p>
+
+                            <p className='text-booking-info'>Theater Name: <span className='get-booking-text'>{theatrename}</span> </p>
+
+                            <p className='text-booking-info'>Seat No: <span className='get-booking-text'>{seatno}</span></p>
+
+                            <p className='text-booking-info'>Date: <span className='get-booking-text'>{date}</span> </p>
+
+                            <p className='text-booking-info'>Time: <span className='get-booking-text'>{time}</span> </p>
+                            </div>
+                        </div>
+                    )
+                })
+            }
 
         </>
     )
