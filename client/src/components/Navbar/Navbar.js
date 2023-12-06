@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function Navbar() {
   const [address,setAddress]=useState('')
+  const [user, setUser] = useState({});
 
   const fetchLocation = () => {
     if ('geolocation' in navigator) {
@@ -34,16 +35,20 @@ function Navbar() {
   }
 
 
+  useEffect(()=>{
+    const storeUser = JSON.parse(localStorage.getItem('user') || '{}');
+    setUser(storeUser);
+  },[])
   return (
 
-    <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+    <nav class="navbar navbar-expand-lg color-bg">
       <div className="container-fluid">
-        <Link className="navbar-brand  fs-3 text-primary" to="/">Easy Booking</Link>
+        <Link className="navbar-brand  fs-3 color" to="/">Easy Booking</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse fs-5 " id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto ">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto color">
             <li className="nav-item">
               <Link className="nav-link active  me-5 color" aria-current="page" to="/">Home</Link>
             </li>
@@ -53,7 +58,7 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/about">About</Link>
             </li>
-            <li className="nav-item">
+            {user.email ? null : <> <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/login">Login</Link>
             </li>
             <li className="nav-item">
@@ -62,17 +67,31 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
             </li>
-
+</>}
           </ul>
           <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" value={address}/>
-        <button class="btn btn-outline-primary" type="button" onClick={fetchLocation}>Search</button>
+        <button class="btn btn-outline-danger" type="button" onClick={fetchLocation}>Search</button>
         </form>
         {/* <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search Prefered" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> */}
+        <div className='logout-text'>
+          <span className='ms-3'>Hello,</span> {user.name || 'user!'}
+          {user?.name ? 
+          (<span onClick={()=>{
+            localStorage.removeItem('user');
+            window.location.href="/login"
+          }}>
+            <img src={logoutImg} className='logoutimg'/>
+          </span>)
+          : 
+          null
+          }
+          
 
+        </div>
         </div>
       </div>
     </nav>

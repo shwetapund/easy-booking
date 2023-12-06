@@ -9,10 +9,8 @@ function BookingTicket() {
 
     const [user, setUser] = useState('');
     const [movie, setMovie] = useState({});
-    const [ticketno, setTicketno] = useState('');
     const [type, setType] = useState('');
     const [theatrename, setTheatrename] = useState('');
-    const [seatno, setSeatno] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
 
@@ -23,66 +21,52 @@ function BookingTicket() {
     }
     useEffect(() => {
         loadMovie();
-    },[])
+    }, [])
 
-    const booking = async ()=>{
+    const booking = async () => {
         const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
 
         const bookingdetails = {
-            user:currentUser._id,
-             movie:movie._id,
-             ticketno:ticketno,
-             type:type,
-             theatrename:theatrename,
-             seatno:seatno,
-             date:date,
-             time:time
+            user: currentUser._id,
+            movie: movie._id,
+            type: type,
+            theatrename: theatrename,
+            date: date,
+            time: time
         }
-        const response = await axios.post('/api/v1/bookmovie',bookingdetails);
+        const response = await axios.post('/api/v1/bookmovie', bookingdetails);
 
         alert(response?.data?.message);
 
-        if(response?.data?.message){
-   
-            window.location.href='/booking';
+        if (response?.data?.success) {
+
+            window.location.href = '/booking';
         }
-     
+
     }
-   
+
     return (
         <>
             <Navbar />
             <div className='booking-container'>
-                <h3 className='text-center pt-3'>Easy Booking</h3>
+                <h3 className='text-center pt-3 '>Easy Booking</h3>
 
-        
+
 
                 <div className='main-booking-container'>
                     <div>
-                    <img src={movie.Imageurl} className='movie-img'/>
-                  <div className='d-flex movie-description '>
-                  <p >⭐{movie.rating}</p>
-                    <p>{movie.movieType}</p>
-                  </div>
-                    <h2 className='text-center'>{movie.title}</h2>
-              
+                        <img src={movie.Imageurl} className='movie-iamge' />
+                        <div className='d-flex movie-description '>
+                            <p >⭐{movie.rating}</p>
+                            <p>{movie.movieType}</p>
+                        </div>
+                        <h3 className='text-center'>{movie.title}</h3>
+
                     </div>
 
                     <div className='left-hand-container'>
 
-                        <div>
-                            <input
-                                type='Number'
-                                placeholder='enter Ticket No'
-                                className='form-handle'
-                                value={ticketno}
-                                onChange={(e) => {
-                                    setTicketno(e.target.value)
-                                }}
-                            />
-                        </div>
-
-                        <div className='d-flex'>
+                      <div className='d-flex'>
                             <div className=''>
                                 <label className='d-flex fs-5 ms-2'>
                                     Type: </label>
@@ -95,36 +79,36 @@ function BookingTicket() {
                                     onClick={(e) => {
                                         setType(e.target.value)
                                     }}
-                                    checked={type==="VIP 500 Rs"}
+                                    checked={type === "VIP 500 Rs"}
                                 /> <span className='type-text'>VIP : 500 Rs</span>
 
                             </div>
                         </div>
                         <div className='type-btn mt-0'>
-                        <div className='type-input'>
-                           
-                            <input
-                                type='radio'
-                                name='typeSelect'
-                                className='input-left'
-                                value="Golden 300 Rs"
-                                onClick={(e) => {
-                                    setType(e.target.value)
-                                }}
-                                checked={type==="Golden 300 Rs"}
-                            /> &nbsp; <span className='type-text'>Golden: 300 Rs</span>
+                            <div className='type-input'>
+
+                                <input
+                                    type='radio'
+                                    name='typeSelect'
+                                    className='input-left'
+                                    value="Golden 300 Rs"
+                                    onClick={(e) => {
+                                        setType(e.target.value)
+                                    }}
+                                    checked={type === "Golden 300 Rs"}
+                                /> &nbsp; <span className='type-text'>Golden: 300 Rs</span>
                             </div>
                             <div className='type-input'>
-                            <input
-                                className='input-left'
-                                type='radio'
-                                name='typeSelect'
-                                value="Solid 200 Rs"
-                                onClick={(e) => {
-                                    setType(e.target.value)
-                                }}
-                                checked={type==="Solid 200 Rs"}
-                            /> &nbsp; <span className='type-text'>Silver: 200 Rs</span>
+                                <input
+                                    className='input-left'
+                                    type='radio'
+                                    name='typeSelect'
+                                    value="Solid 200 Rs"
+                                    onClick={(e) => {
+                                        setType(e.target.value)
+                                    }}
+                                    checked={type === "Solid 200 Rs"}
+                                /> &nbsp; <span className='type-text'>Silver: 200 Rs</span>
                             </div>
                         </div>
                     </div>
@@ -151,23 +135,9 @@ function BookingTicket() {
 
                         <div>
                             <input
-                                type='Number'
-                                placeholder='enter seat No'
-                                className='form-handle'
-                                value={seatno}
-                                onChange={(e) => {
-                                    setSeatno(e.target.value)
-                                }}
-                            />
-                        </div>
-
-
-                        <div>
-                            <input
                                 type='date'
                                 className='form-handle'
-
-                                value={date}
+                                 value={date}
                                 onChange={(e) => {
                                     setDate(e.target.value)
                                 }}
@@ -175,16 +145,19 @@ function BookingTicket() {
 
                         </div>
                         <div>
-                            <input
-                                type='text'
-                                placeholder='Time'
-                                className='form-handle'
-                                value={time}
-                                onChange={(e) => {
-                                    setTime(e.target.value)
-                                }}
-                            />
-
+                            <select 
+                            className='form-handle'
+                          
+                            value={time}
+                            onChange={(e)=>{
+                                setTime(e.target.value);
+                            }}>
+                                <option>Select Time</option>
+                                <option value="9 To 12 AM">9 To 12 AM</option>
+                                <option value="12 To 3 PM">12 To 3 PM</option>
+                                <option value="6 To 9 PM">6 To 9 PM</option>
+                                <option value="9 To 12 PM">9 To 12 PM</option>
+                            </select>
                         </div>
 
 
