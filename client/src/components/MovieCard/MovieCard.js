@@ -5,7 +5,7 @@ function MovieCard({_id,Imageurl,rating,movieType,title}) {
   return (
    <>
        <div className="movie-Contanier">
-        {_id}
+      
            <img src={Imageurl} alt="" className="img" />
             <div className="rating">
             <span className="rating-text"> ⭐{rating}</span>
@@ -13,7 +13,7 @@ function MovieCard({_id,Imageurl,rating,movieType,title}) {
             </div>   
             <strong className="movie-title">{title} </strong>  
 
-            <Link to={`/booking/${_id}`}> book</Link>     
+            <Link to={`/bookingTicket/${_id}`}> book</Link>     
        </div>
    </>
   )

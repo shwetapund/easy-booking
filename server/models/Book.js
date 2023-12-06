@@ -17,12 +17,9 @@ import { Schema, model } from "mongoose";
     },
     type:{
         type : String,
-        enum:['solid: 200 Rs, golden: 300 Rs, VIP: 500 Rs'],
-        required : true
     },
     theatrename:{
         type : String,
-        enum:['Cinepolis Cinemas (Seasons Mall), City Pride Cinemas (Abhircuhi Mall), City Pride Multiplex. , E Square Multiplex, Victory Theatre., Carnival Cinemas'],
         required : true
     },
     seatno:{
