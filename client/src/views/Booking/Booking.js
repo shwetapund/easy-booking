@@ -23,7 +23,7 @@ function Booking() {
 
         <>
             <Navbar />
-    {/* //user, movie,ticketno,type,theatrename,seatno,date,time */}
+   
             <h2 className='text-center mt-4'>All booking</h2>
             {
                 booking?.map((bookingInstance, index)=>{

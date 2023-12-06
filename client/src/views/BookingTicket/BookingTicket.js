@@ -41,6 +41,11 @@ function BookingTicket() {
         const response = await axios.post('/api/v1/bookmovie',bookingdetails);
 
         alert(response?.data?.message);
+        
+        if(response?.data?.message){
+   
+            window.location.href='/booking';
+        }
      
     }
    
@@ -86,11 +91,11 @@ function BookingTicket() {
                                 <input
                                     type='radio'
                                     name='typeSelect'
-                                    value="vip-500-rs"
+                                    value="VIP 500 Rs"
                                     onClick={(e) => {
                                         setType(e.target.value)
                                     }}
-                                    checked={type==="vip-500-rs"}
+                                    checked={type==="VIP 500 Rs"}
                                 /> <span className='type-text'>VIP : 500 Rs</span>
 
                             </div>
@@ -102,11 +107,11 @@ function BookingTicket() {
                                 type='radio'
                                 name='typeSelect'
                                 className='input-left'
-                                value="golden-300-rs"
+                                value="Golden 300 Rs"
                                 onClick={(e) => {
                                     setType(e.target.value)
                                 }}
-                                checked={type==="golden-300-rs"}
+                                checked={type==="Golden 300 Rs"}
                             /> &nbsp; <span className='type-text'>Golden: 300 Rs</span>
                             </div>
                             <div className='type-input'>
@@ -114,11 +119,11 @@ function BookingTicket() {
                                 className='input-left'
                                 type='radio'
                                 name='typeSelect'
-                                value="solid-200-rs"
+                                value="Solid 200 Rs"
                                 onClick={(e) => {
                                     setType(e.target.value)
                                 }}
-                                checked={type==="solid-200-rs"}
+                                checked={type==="Solid 200 Rs"}
                             /> &nbsp; <span className='type-text'>Silver: 200 Rs</span>
                             </div>
                         </div>
