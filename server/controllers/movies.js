@@ -88,13 +88,13 @@ const bookmovie = async (req, res) => {
 
     try {
         const saveBooking = await books.save();
-        res.status(201).json({
+        res.json({
             success: true,
             Order: saveBooking,
             message: " Ticket Book succesfully..!"
         })
     } catch (e) {
-        res.status(404).json({
+        res.json({
             success: false,
             message: e.message
         })
@@ -105,7 +105,7 @@ const getuserbook =  async (req, res) => {
     try{
         const { id } = req.params
         const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
-        res.status(204).json({
+        res.status(200).json({
             success:true,
             data:findBooking,
             message:" Booking fetch successfully..!"  

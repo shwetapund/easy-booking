@@ -36,14 +36,18 @@ function BookingTicket() {
             date: date,
             time: time
         }
+       try{
         const response = await axios.post('/api/v1/bookmovie', bookingdetails);
 
         alert(response?.data?.message);
 
-        if (response?.data?.success) {
+        if (response?.data?.success===true) {
 
             window.location.href = '/booking';
         }
+       }catch(err){
+        console.log(err.message);
+       }
 
     }
 
