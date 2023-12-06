@@ -6,6 +6,7 @@ const addMovie = async (req,res)=>{
     // if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
     //     res.status(400).send({msg:"All fields are required"})
     // }
+    
     const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
@@ -52,7 +53,7 @@ const getMovieById = async (req,res)=>{
     const {id} = req.params;
 
     const fetchMovie = await Movie.findOne({_id:id})
-    res.json({
+    res.status(204).json({
         success:true,
         data:fetchMovie,
         message:'successfully fetch movie '
@@ -88,13 +89,13 @@ const bookmovie = async (req, res) => {
 
     try {
         const saveBooking = await books.save();
-        res.json({
+        res.status(201).json({
             success: true,
             Order: saveBooking,
             message: " Ticket Book succesfully..!"
         })
     } catch (e) {
-        res.json({
+        res.status(404).json({
             success: false,
             message: e.message
         })
@@ -102,13 +103,17 @@ const bookmovie = async (req, res) => {
 }
 
 const getuserbook =  async (req, res) => {
-    const { id } = req.params
-    const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
-    res.json({
-        success:true,
-        data:findBooking,
-        message:" Booking fetch successfully..!"  
-      })
+    try{
+        const { id } = req.params
+        const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
+        res.status(204).json({
+            success:true,
+            data:findBooking,
+            message:" Booking fetch successfully..!"  
+          })
+    }catch(err){
+         res.status(404).send(err.message)
+    }
 }
 
 
