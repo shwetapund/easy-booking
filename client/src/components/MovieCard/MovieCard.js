@@ -7,6 +7,7 @@ function MovieCard({ _id, Imageurl, rating, movieType, title,language }) {
     <>
       <div className="movie-Contanier">
 
+
         <img src={Imageurl} alt="" className="img" />
         <div className="imfo-div">
           <span className="title">{title}</span>
