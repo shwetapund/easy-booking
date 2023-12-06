@@ -21,8 +21,8 @@ if(response?.data?.success){
     return (
         <>
         <Navbar/>
-            <div className='loginsignup'>
-                <div className='loginsinup-container  '>
+            <div className='login-page '>
+                <div className=' login-container '>
                     <h1>login</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
