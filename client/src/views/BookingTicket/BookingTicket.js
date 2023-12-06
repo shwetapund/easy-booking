@@ -41,7 +41,7 @@ function BookingTicket() {
         const response = await axios.post('/api/v1/bookmovie',bookingdetails);
 
         alert(response?.data?.message);
-        
+
         if(response?.data?.message){
    
             window.location.href='/booking';
@@ -101,7 +101,7 @@ function BookingTicket() {
                             </div>
                         </div>
                         <div className='type-btn mt-0'>
-                            <div className='type-input'>
+                        <div className='type-input'>
                            
                             <input
                                 type='radio'
