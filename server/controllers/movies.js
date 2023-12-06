@@ -2,10 +2,10 @@ import Movie from "./../models/Movie.js";
 import Book from "../models/Book.js";
 
 const addMovie = async (req,res)=>{
-    const {title,Imageurl,duration,releaseDate,movieType,rating,description}=req.body;
-    if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
-        res.status(400).send({msg:"All fields are required"})
-    }
+    const {title,Imageurl,duration,releaseDate,movieType,rating,description,language}=req.body;
+    // if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
+    //     res.status(400).send({msg:"All fields are required"})
+    // }
     const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
@@ -13,7 +13,8 @@ const addMovie = async (req,res)=>{
         releaseDate:releaseDate,
         movieType:movieType,
         rating:rating,
-        description:description
+        description:description,
+        language:language
     })
 
     try{

@@ -1,21 +1,21 @@
 import "./MovieCard.css"
 import { Link } from "react-router-dom"
 
-function MovieCard({_id,Imageurl,rating,movieType,title}) {
+function MovieCard({ _id, Imageurl, rating, movieType, title,language }) {
   return (
-   <>
-       <div className="movie-Contanier">
-        {_id}
-           <img src={Imageurl} alt="" className="img" />
-            <div className="rating">
-            <span className="rating-text"> ⭐{rating}</span>
-            <span>{movieType} </span>
-            </div>   
-            <strong className="movie-title">{title} </strong>  
+    <>
+      <div className="movie-Contanier">
 
-            <Link to={`/booking/${_id}`}> book</Link>     
-       </div>
-   </>
+        <img src={Imageurl} alt="" className="img" />
+        <div className="imfo-div">
+          <span className="title">{title}</span>
+           
+          <span className="movietype">{movieType}</span>
+           <Link to={`/booking/${_id}`} className="link"> BOOK TICKET</Link>
+        
+        </div>
+      </div>
+    </>
   )
 }
 

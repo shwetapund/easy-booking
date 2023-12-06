@@ -2,6 +2,7 @@ import  { useState } from 'react';
 import './SignUp.css';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import Navbar from '../../components/Navbar/Navbar';
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -44,6 +45,7 @@ window.location.href='/login'
 
     return (
         <>
+        <Navbar/>
             <div className='loginsignup'>
                 <div className='loginsinup-container'>
                     <h1>SignUp</h1>
