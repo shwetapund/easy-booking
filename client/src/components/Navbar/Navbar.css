@@ -7,3 +7,9 @@
 .color:hover{
     color: blue !important;
 }
+.img-admin{
+    height: 30px;
+}
+.admin-text{
+    font-size: 10px;
+}

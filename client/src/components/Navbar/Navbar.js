@@ -33,6 +33,7 @@ function Navbar() {
     }
   }
 
+
   return (
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
@@ -57,6 +58,9 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/signup">SignUp</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link active me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
             </li>
 
           </ul>
