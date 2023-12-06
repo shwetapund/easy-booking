@@ -43,7 +43,7 @@ app.get('/api/v1/user/bookings/:id', getuserbook)
 
 app.post('/api/v1/bookmovie', bookmovie)
 
-app.get('/api/v1/bookmovie/:id',getMovieById)
+app.get('/api/v1/bookmovie/:_id',getMovieById)
 
 
 

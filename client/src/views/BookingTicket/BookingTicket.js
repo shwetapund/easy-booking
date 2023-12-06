@@ -16,7 +16,9 @@ function BookingTicket() {
 
     const loadMovie = async () => {
         const response = await axios.get(`/api/v1/bookmovie/${id}`)
-        setMovie(response?.data?.data);
+       setMovie(response?.data?.data);
+
+      
 
     }
     useEffect(() => {
@@ -51,8 +53,6 @@ function BookingTicket() {
             <div className='booking-container'>
                 <h3 className='text-center pt-3 '>Easy Booking</h3>
 
-
-
                 <div className='main-booking-container'>
                     <div>
                         <img src={movie.Imageurl} className='movie-iamge' />
@@ -66,7 +66,7 @@ function BookingTicket() {
 
                     <div className='left-hand-container'>
 
-                      <div className='d-flex'>
+                        <div className='d-flex'>
                             <div className=''>
                                 <label className='d-flex fs-5 ms-2'>
                                     Type: </label>
@@ -137,7 +137,7 @@ function BookingTicket() {
                             <input
                                 type='date'
                                 className='form-handle'
-                                 value={date}
+                                value={date}
                                 onChange={(e) => {
                                     setDate(e.target.value)
                                 }}
@@ -145,13 +145,13 @@ function BookingTicket() {
 
                         </div>
                         <div>
-                            <select 
-                            className='form-handle'
-                          
-                            value={time}
-                            onChange={(e)=>{
-                                setTime(e.target.value);
-                            }}>
+                            <select
+                                className='form-handle'
+
+                                value={time}
+                                onChange={(e) => {
+                                    setTime(e.target.value);
+                                }}>
                                 <option>Select Time</option>
                                 <option value="9 To 12 AM">9 To 12 AM</option>
                                 <option value="12 To 3 PM">12 To 3 PM</option>

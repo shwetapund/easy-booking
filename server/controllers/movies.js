@@ -6,7 +6,6 @@ const addMovie = async (req,res)=>{
     // if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
     //     res.status(400).send({msg:"All fields are required"})
     // }
-    
     const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
@@ -50,10 +49,10 @@ const getAllMovies= async(req,res)=>{
 }
 const getMovieById = async (req,res)=>{
    try{
-    const {id} = req.params;
+    const {_id} = req.params;
 
-    const fetchMovie = await Movie.findOne({_id:id})
-    res.status(204).json({
+    const fetchMovie = await Movie.findById(_id)
+    res.status(200).json({
         success:true,
         data:fetchMovie,
         message:'successfully fetch movie '
