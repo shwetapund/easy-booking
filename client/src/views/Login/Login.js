@@ -10,58 +10,62 @@ function Login() {
 
 
     const login = async () => {
-        const response = await axios.post('/api/v1/logins', {
-            email: email,
-            password: password
-        })
-        alert(response?.data?.message)
-        if (response?.data?.success) {
-            localStorage.setItem('user', JSON.stringify(response?.data?.data))
-            window.location.href = '/'
+        try {
+            const response = await axios.post('/api/v1/logins', {
+                email: email,
+                password: password
+            })
+            alert(response?.data?.message)
+            if (response?.data?.success) {
+                localStorage.setItem('user', JSON.stringify(response?.data?.data))
+                window.location.href = '/'
+            }
+        } catch (err) {
+            console.log(err.message)
         }
     }
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         const findUser = JSON.parse(localStorage.getItem('user') || '{}')
 
-        if(findUser?.email){
+        if (findUser?.email) {
             showToast('You are already logged In !', 'danger', 3000)
-            window.location.href='/';
+            window.location.href = '/';
         }
-    })
+    },[])
 
-        return (
-            <>
-                <Navbar />
-                <div className='login-page '>
-                    <div className=' login-container '>
-                        <h1>login</h1>
-                        <div className='loginsingup-fields'>
-                            <input type='text'
-                                value={email}
-                                onChange={(e) => {
-                                    setEmail(e.target.value)
-                                }}
-                                placeholder='enter your email'
-                                className='inputfields' />
+    return (
+        <>
+            <Navbar />
+            <div className='login-page '>
+                <div className=' login-container '>
+                    <h1>login</h1>
+                    <div className='loginsingup-fields'>
+                        <input type='text'
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }}
+                            placeholder='enter your email'
+                            className='inputfields' />
 
-                            <input type='text'
-                                value={password}
-                                onChange={(e) => {
-                                    setPassword(e.target.value)
-                                }}
-                                placeholder='enter your password'
-                                className='inputfields' />
+                        <input type='text'
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                            }}
+                            placeholder='enter your password'
+                            className='inputfields' />
 
-                            <button type='button' onClick={login} >login</button>
+                        <button type='button' onClick={login} >login</button>
 
-                            <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signUp' className='loginsignup-link'>Signup</Link>
-                            </span></p>
-                        </div>
+                        <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signUp' className='loginsignup-link'>Signup</Link>
+                        </span></p>
                     </div>
-
                 </div>
-            </>
-        )
-    }
-    export default Login
+
+            </div>
+        </>
+    )
+}
+export default Login
