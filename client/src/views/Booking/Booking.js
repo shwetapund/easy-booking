@@ -15,10 +15,8 @@ function Booking() {
         const getUser = JSON.parse(localStorage.getItem('user') || '{}');
         const userstore = getUser._id;
 
-
         try{
             const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
-
 
             setBooking(response?.data?.data);
         }catch(err){
@@ -58,8 +56,7 @@ function Booking() {
                             <img src={movie?.Imageurl} className='img-booking'/>
                             </div>
                             <div className='booking-information'>
-                            <p className='text-booking-info'>Ticket No:<span className='get-booking-text'>{ticketno}</span></p>
-
+            
                             <p className='text-booking-info'>Type:<span className='get-booking-text'>{type}</span> </p>
 
                             <p className='text-booking-info'>Theater Name: <span className='get-booking-text'>{theatrename}</span> </p>

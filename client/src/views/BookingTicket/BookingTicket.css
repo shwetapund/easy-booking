@@ -5,7 +5,6 @@
     display: block;
     margin: 60px auto;
     border-radius: 10px;
-
 }
 .form-handle{
     display: block;
@@ -42,6 +41,7 @@ margin-top: 20px;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: red;
+    border: 1px solid red;
     width: 250px;
     display: block;
     margin: 60px auto;
@@ -74,5 +74,51 @@ margin-top: 20px;
 }
 .input-left{
     margin-left: 100px;
-   
+}
+@media screen and (max-width:768px){
+    .main-booking-container{
+        flex-direction: column;
+    }
+    .booking-container{
+        width: 280px;
+        height:730px;
+    }
+    .movie-iamge{
+        height: 200px;
+        width: 250px;
+        display: block;
+        margin: 0px auto;
+    }
+    .left-hand-container{
+        margin-top: 10px;
+        }
+        .right-hand-container{
+            margin-top: 10px;
+        }
+        .type-input{
+            display: flex;
+            margin-top: 10px;
+        }
+        .input-left{
+            margin-left: 100px;
+        }
+        .movie-description{
+            padding: 1px 15px;
+           font-size:15px;
+           margin-left: 15px;
+           margin-right: 15px;
+        }
+        .booking-btn{
+            padding: 5px 10px;
+            width: 150px;
+            margin: 60px auto;
+            font-size: 20px;
+            position:relative;
+            bottom: 40px;
+        }
+        .form-handle{
+            padding: 5px 10px;
+            width: 170px;
+       
+        }
 }

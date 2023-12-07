@@ -45,3 +45,22 @@ justify-content: center;
     width: 30px;
     background-color: white;
 }
+
+@media screen and (max-width:768px){
+    .description{
+        font-size:17px;
+        text-align: justify;
+    }
+    .links-container{
+        margin-left: 100px;
+    }
+   .contact-text{
+    margin-top: 30px;
+   }
+   .contact-icon{
+        margin-top:10px;
+   }
+   .mob-text{
+    margin-top: -40px;
+   }
+}

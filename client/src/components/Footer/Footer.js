@@ -31,8 +31,8 @@ export default function Footer() {
            </div>
         </div>
         <div className="col-lg-4">
-        <h3>Contact 📞</h3>
-         <h5 className='mt-5'>Mob 📞: 8393273255</h5>
+        <h3 className='contact-text'>Contact 📞</h3>
+         <h5 className='mt-5 mob-text'>Mob 📞: 8393273255</h5>
           <div className="contact-container mt-4">
            
             <div className='contact-icon'>

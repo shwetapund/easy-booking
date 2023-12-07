@@ -21,8 +21,6 @@ function BookingTicket() {
         const response = await axios.get(`/api/v1/bookmovie/${id}`)
        setMovie(response?.data?.data);
 
-      
-
     }
     useEffect(() => {
         loadMovie();
@@ -78,12 +76,12 @@ function BookingTicket() {
                 <div className='main-booking-container'>
                     <div>
                         <img src={movie.Imageurl} className='movie-iamge' />
-                        <div className='d-flex movie-description '>
-                            <p >⭐{movie.rating}</p>
+                        <div className='d-flex movie-description'>
+                            <p>⭐{movie.rating}</p>
                             <p>{movie.movieType}</p>
                         </div>
                         <h3 className='text-center'>{movie.title}</h3>
-
+                    
                     </div>
 
                     <div className='left-hand-container'>

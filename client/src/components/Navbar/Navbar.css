@@ -42,3 +42,11 @@
 .logout-text{
     color: white;
 }
+@media screen and (max-width:768px){
+    .toggle-after{
+        color: white !important;
+    }
+}
+.toggle-after{
+
+}
