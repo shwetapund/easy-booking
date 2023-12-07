@@ -37,7 +37,8 @@ function BookingTicket() {
             type: type,
             theatrename: theatrename,
             date: date,
-            time: time
+            time: time,
+            seatno:Math.floor(Math.random() *100)
         }
        try{
         const response = await axios.post('/api/v1/bookmovie', bookingdetails);

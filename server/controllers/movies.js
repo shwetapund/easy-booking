@@ -112,7 +112,10 @@ const getuserbook =  async (req, res) => {
         message:" Booking fetch successfully..!"  
       })
     }catch(err){
-        
+        res.status(404).json({
+            success:false,
+            err:err.message
+        })
     }
     
 }
