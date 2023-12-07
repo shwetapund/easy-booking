@@ -13,11 +13,7 @@ import { Schema, model } from "mongoose";
     },
     ticketno:{
         type : String,
-<<<<<<< HEAD
-
-=======
         required : false
->>>>>>> a3769d264ee910a18d8af25baba759163afadbae
     },
     type:{
         type : String,
@@ -28,11 +24,7 @@ import { Schema, model } from "mongoose";
     },
     seatno:{
         type: String,
-<<<<<<< HEAD
-
-=======
         required : false
->>>>>>> a3769d264ee910a18d8af25baba759163afadbae
     },
     date:{
         type: String,
