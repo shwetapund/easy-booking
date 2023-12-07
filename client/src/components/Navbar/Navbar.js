@@ -34,6 +34,7 @@ function Navbar() {
     }
   }
 
+
   useEffect(()=>{
     const storeUser = JSON.parse(localStorage.getItem('user') || '{}');
     setUser(storeUser);
@@ -57,13 +58,16 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/about">About</Link>
             </li>
-            <li className="nav-item">
+            {user.email ? null : <> <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/login">Login</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/signup">SignUp</Link>
             </li>
-
+            <li className="nav-item">
+              <Link className="nav-link active me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
+            </li>
+</>}
           </ul>
           <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" value={address}/>
