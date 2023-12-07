@@ -40,7 +40,8 @@ const response = await axios.post('/api/v1/signups',{
 mobileNo:mobileNo,
 gender:gender
 })
-alert(response?.data?.message)
+
+showToast(response?.data?.message, 'success', 3000)
 if(response?.data?.success){
 window.location.href='/login'
 }

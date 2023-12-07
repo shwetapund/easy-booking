@@ -16,7 +16,8 @@ function Login() {
                 email: email,
                 password: password
             })
-            alert(response?.data?.message)
+      
+            showToast(response?.data?.message, 'success', 3000)
             if (response?.data?.success) {
                 localStorage.setItem('user', JSON.stringify(response?.data?.data))
                 window.location.href = '/'
