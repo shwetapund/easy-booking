@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../../components/Navbar/Navbar';
 import showToast from 'crunchy-toast';
+import Footer from '../../components/Footer/Footer';
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -119,6 +120,7 @@ useEffect(()=>{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

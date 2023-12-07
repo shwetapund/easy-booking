@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import showToast from 'crunchy-toast';
+import Footer from "./../../components/Footer/Footer";
 //user, movie,ticketno,type,theatrename,seatno,date,time
 function Booking() {
     const [booking, setBooking] = useState([])
@@ -49,10 +50,12 @@ function Booking() {
                 booking?.map((bookingInstance, index)=>{
                     const {movie,ticketno,type,theatrename,seatno,date,time} = bookingInstance;
 
+                    console.log(bookingInstance);
+
                     return(
                         <div key={index} className='ALL-booking-container'>
                             <div>
-                            <img src={movie.Imageurl} className='img-booking'/>
+                            <img src={movie?.Imageurl} className='img-booking'/>
                             </div>
                             <div className='booking-information'>
                             <p className='text-booking-info'>Ticket No:<span className='get-booking-text'>{ticketno}</span></p>
@@ -71,7 +74,7 @@ function Booking() {
                     )
                 })
             }
-
+           <Footer/>
         </>
     )
 }
