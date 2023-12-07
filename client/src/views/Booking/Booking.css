@@ -1,90 +1,14 @@
-/* .booking-container{
-    height: 550px;
-    width: 900px;
-    box-shadow: 0px 0px 10px 1px rgb(245, 183, 183);
-    display: block;
-    margin: 60px auto;
-    border-radius: 10px;
-
-}
-.form-handle{
-    display: block;
-    margin: 0px auto;
-    font-size: 16px;
-    padding: 5px 10px;
-    width: 250px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-.small-field{
-    margin: 15px 10px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    width: 150px;
-}
-
-.left-hand-container{
-margin-top: 20px;
-}
-.right-hand-container{
-    margin-top: 20px;
-}
-.main-booking-container{
-    display: flex;
-    justify-content: space-evenly;
-}
-.type-text{
-    font-size: 17px;
-}
-.booking-btn{
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: red;
-    width: 250px;
-    display: block;
-    margin: 60px auto;
-    color: white;
-    font-size: 25px;
-    position:relative;
-    bottom: 40px;
-}
-.movie-img{
-    height: 300px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px; 
-}
-.movie-description{
-    padding: 1px 10px;
-    background-color: lightgray;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-   font-size:17px;
-}
-.type-btn{
-    display: flex;
-    flex-direction: column;
-
-}
-.type-input{
-    display: flex;
-    margin-top: 20px;
-}
-.input-left{
-    margin-left: 100px;
-   
-} */
 
 .img-booking{
     height: 330px;
-    width: 280px;
+    width: 300px;
     margin-right: 100px;
     border-radius: 10px;
 }
 .ALL-booking-container{
     height: 400px;
     width: 770px;
-    box-shadow: 0px 0px 10px 1px lightgray;
+    box-shadow: 0px 0px 10px 1px rgb(248, 133, 133);
     display: block;
     margin: 60px auto;
     border-radius: 10px;

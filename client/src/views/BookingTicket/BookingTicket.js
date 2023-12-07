@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import showToast from 'crunchy-toast';
 //user, movie,ticketno,type,theatrename,seatno,date,time
+
 function BookingTicket() {
     const { id } = useParams();
 
@@ -53,7 +54,7 @@ function BookingTicket() {
           setUser(userfind);
         }
         else{
-          showToast('you are not logged in!', 'danger',1000);
+          showToast('You are not Logged In', 'danger', 3000);
           window.location.href='/login'
         }
     

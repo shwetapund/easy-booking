@@ -13,7 +13,7 @@ import { Schema, model } from "mongoose";
     },
     ticketno:{
         type : String,
-        required : true
+
     },
     type:{
         type : String,
@@ -24,7 +24,7 @@ import { Schema, model } from "mongoose";
     },
     seatno:{
         type: String,
-        required : true
+
     },
     date:{
         type: String,

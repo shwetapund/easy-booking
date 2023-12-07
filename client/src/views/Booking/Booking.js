@@ -44,10 +44,12 @@ function Booking() {
                 booking?.map((bookingInstance, index)=>{
                     const {movie,ticketno,type,theatrename,seatno,date,time} = bookingInstance;
 
+                    console.log(bookingInstance);
+
                     return(
                         <div key={index} className='ALL-booking-container'>
                             <div>
-                            <img src={movie.Imageurl} className='img-booking'/>
+                            <img src={movie?.Imageurl} className='img-booking'/>
                             </div>
                             <div className='booking-information'>
                             <p className='text-booking-info'>Ticket No:<span className='get-booking-text'>{ticketno}</span></p>
