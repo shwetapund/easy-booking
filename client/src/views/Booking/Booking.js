@@ -3,9 +3,12 @@ import Navbar from "./../../components/Navbar/Navbar";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import showToast from 'crunchy-toast';
 //user, movie,ticketno,type,theatrename,seatno,date,time
 function Booking() {
     const [booking, setBooking] = useState([])
+    const [user, setUser] = useState({});
+
 
     const loadBooking = async ()=>{
         const getUser = JSON.parse(localStorage.getItem('user') || '{}');
@@ -25,6 +28,17 @@ function Booking() {
         loadBooking();
     },[])
 
+    useEffect(()=>{
+        const userfind = JSON.parse(localStorage.getItem('user') || '{}')
+        
+        if(userfind?.email){
+            setUser(userfind)
+        }
+        else{
+            showToast('You are not logged in!', 'success', 3000);
+            window.location.href='/login';
+        }
+    })
     return (
 
         <>
