@@ -1,8 +1,9 @@
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './SignUp.css';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../../components/Navbar/Navbar';
+import showToast from 'crunchy-toast';
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -10,6 +11,7 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const [mobileNo, setMobileNo] = useState('')
     const [gender, setGender] = useState('female')
+   
     const signup = async()=> {
 if(!name){
     alert('name is required');
@@ -42,7 +44,16 @@ if(response?.data?.success){
 window.location.href='/login'
 }
     }
+    
+useEffect(()=>{
+    const userfinder = JSON.parse(localStorage.getItem('user') || '{}')
 
+    if(userfinder?.email){
+        showToast('You are already logged in!', 'danger', 3000);
+        window.location.href='/';
+    }
+  
+},[])
     return (
         <>
         <Navbar/>
