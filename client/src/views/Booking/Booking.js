@@ -16,7 +16,7 @@ function Booking() {
             const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
 
 
-            setBooking(response?.data?.data);
+            0(response?.data?.data);
         }catch(err){
             console.log("Error", err)
         }
