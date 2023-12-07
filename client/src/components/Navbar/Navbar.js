@@ -86,11 +86,13 @@ function Navbar() {
             localStorage.removeItem('user');
             window.location.href="/login"
           }}>
-            <img src={logoutImg} className='logoutimg'/>
+            <img src={logoutImg} className='logoutimg' alt=''/>
           </span>)
           : 
           null
           }
+
+
           
         </div>
         </div>
