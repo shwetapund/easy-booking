@@ -5,6 +5,7 @@ import axios from 'axios'
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
 import Carousel from '../../components/Carousel/Carousel';
+import Footer from '../../components/Footer/Footer';
 
 function Home(){
    const [movie,setMovie]=useState([])
@@ -69,6 +70,7 @@ function Home(){
                 }
                 
             </div>
+            <Footer/>
         </>
     )
 }
