@@ -1,0 +1,51 @@
+.site-img{
+    height: 400px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-right: 80px;
+}
+.container-about{
+    display: flex;
+    justify-content: space-around;
+}
+.paragraph{
+    margin-top: 50px;
+    font-size: 18px;
+    text-align: justify;
+    margin-right: 70px;
+}
+.button-about{
+    text-decoration: none;
+    color: white;
+}
+.button-abouts{
+    padding: 8px 30px;
+    background-color: tomato;
+    color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: none;
+}
+.hading-team{
+    margin-top: 60px;
+}
+.card-contain{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+@media (max-width: 768px){
+    .site-img{
+        height: 200px;
+        display: block;
+        margin: 40px auto;
+    }
+    .container-about{
+        display: flex;
+        flex-direction: column;
+    }
+    .paragraph{
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
