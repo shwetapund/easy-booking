@@ -8,7 +8,7 @@ import axios from 'axios';
 function Navbar() {
   const [address,setAddress]=useState('')
   const [user, setUser] = useState({});
-  const [admin,setAdmin]=useState({})
+ 
 
   const fetchLocation = () => {
     if ('geolocation' in navigator) {
@@ -40,8 +40,7 @@ function Navbar() {
   useEffect(()=>{
     const storeUser = JSON.parse(localStorage.getItem('user') || '{}');
     setUser(storeUser);
-    const storeAdmin=JSON.parse(localStorage.getItem('admin')||{})
-    setAdmin(storeAdmin)
+    
   },[])
   return (
 
@@ -63,7 +62,7 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/about">About</Link>
             </li>
-            {user.email || admin.email ? null : <> <li className="nav-item">
+            {user.email ? null : <> <li className="nav-item">
               <Link className="nav-link active me-5 color" aria-current="page" to="/login">Login</Link>
             </li>
             <li className="nav-item">
@@ -83,8 +82,8 @@ function Navbar() {
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> */}
         <div className='logout-text'>
-          <span className='ms-3'>Hello,</span> {user.name || admin.name || 'user!'}
-          {user?.name || admin?.name? 
+          <span className='ms-3'>Hello,</span> {user.name || 'user!'}
+          {user?.name ? 
           (<span onClick={()=>{
             localStorage.removeItem('user');
             window.location.href="/login"
