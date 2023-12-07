@@ -66,12 +66,9 @@ function Login() {
                 </div>
 
             </div>
+            <Footer/>
         </>
     )
 }
-export default Login
-                <Footer/>
-            </>
-        )
-    }
+
     export default Login

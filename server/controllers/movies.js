@@ -111,6 +111,8 @@ const getuserbook =  async (req, res) => {
         data:findBooking,
         message:" Booking fetch successfully..!"  
       })
+    }catch(err){
+        
     }
     
 }
