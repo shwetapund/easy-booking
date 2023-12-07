@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AdminLogin from './views/AdminLogin/AdminLogin';
+import AdminDashboard from './views/AdminDashboard/AdminDashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
 {
   path:'/bookingTicket/:id',
   element: <BookingTicket/>
+},
+{
+  path:'admin-dashboard',
+  element:<AdminDashboard/>
 }
 
 ])

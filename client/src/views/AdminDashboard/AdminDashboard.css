@@ -1,0 +1,50 @@
+/* AdminDashboard.css */
+
+.admin-main-contanier {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .admin-sub-contanier {
+    background-color: #f0f0f0;
+    width: 40%;
+    height: 576px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+  }
+  ::-webkit-scrollbar{
+    width: 3px;
+  }
+  
+  .form-group {
+    margin-bottom: 2px;
+  }
+  
+  .form-control {
+    width: 90%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-outline-danger {
+    background-color: #fff;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  /* Add any additional styles as needed */
+  

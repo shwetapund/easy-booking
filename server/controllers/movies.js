@@ -49,10 +49,10 @@ const getAllMovies= async(req,res)=>{
 }
 const getMovieById = async (req,res)=>{
    try{
-    const {id} = req.params;
+    const {_id} = req.params;
 
-    const fetchMovie = await Movie.findOne({_id:id})
-    res.json({
+    const fetchMovie = await Movie.findById(_id)
+    res.status(200).json({
         success:true,
         data:fetchMovie,
         message:'successfully fetch movie '
@@ -104,6 +104,16 @@ const bookmovie = async (req, res) => {
 const getuserbook =  async (req, res) => {
     try{
         const { id } = req.params
+
+        const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
+        res.status(200).json({
+            success:true,
+            data:findBooking,
+            message:" Booking fetch successfully..!"  
+          })
+    }catch(err){
+         res.status(404).send(err.message)
+
     const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
     res.json({
         success:true,
@@ -116,6 +126,7 @@ const getuserbook =  async (req, res) => {
             success:false,
             message:err.message
         })
+
     }
 }
 

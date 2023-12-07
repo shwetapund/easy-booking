@@ -15,9 +15,14 @@ function Booking() {
         const userstore = getUser._id;
 
 
-        const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
+        try{
+            const response = await axios.get(`/api/v1/user/bookings/${userstore}`)
 
-        setBooking(response?.data?.data);
+
+            0(response?.data?.data);
+        }catch(err){
+            console.log("Error", err)
+        }
     }
     useEffect(()=>{
         loadBooking();
