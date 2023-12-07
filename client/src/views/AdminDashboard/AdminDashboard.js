@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './AdminDashboard.css'
 import axios from 'axios';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import Navbar from './../../components/Navbar/Navbar'
+import Footer from './../../components/Footer/Footer'
 function AdminDashboard() {
   const [title, setTitle] = useState('');
   const [Imageurl, setImageurl] = useState('');
@@ -66,6 +68,7 @@ function AdminDashboard() {
 
   return (
     <>
+       <Navbar/>
          <div className='admin-main-contanier'>
 
           <div className='admin-sub-contanier container mt-3'>
@@ -134,8 +137,9 @@ function AdminDashboard() {
                
            
           </div>
-
+    <Footer/>
          </div>
+        
     </>
   )
 }

@@ -31,8 +31,9 @@ function Booking() {
 
     useEffect(()=>{
         const userfind = JSON.parse(localStorage.getItem('user') || '{}')
+        const Adminfind = JSON.parse(localStorage.getItem('admin') || '{}')
         
-        if(userfind?.email){
+        if(userfind?.email || Adminfind?.email){
             setUser(userfind)
         }
         else{
