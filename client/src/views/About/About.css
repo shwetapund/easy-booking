@@ -29,3 +29,23 @@
 .hading-team{
     margin-top: 60px;
 }
+.card-contain{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+@media (max-width: 768px){
+    .site-img{
+        height: 200px;
+        display: block;
+        margin: 40px auto;
+    }
+    .container-about{
+        display: flex;
+        flex-direction: column;
+    }
+    .paragraph{
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}

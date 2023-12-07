@@ -1,8 +1,14 @@
 import react from 'react';
 import './About.css';
+import Footer from "./../../components/Footer/Footer";
 import Navbar from './../../components/Navbar/Navbar';
 import bokking from "./../About/easy.jpg"
 import { Link } from 'react-router-dom';
+import Card from '../../components/Card/Card';
+import shweta from "./../About/shweta.jpg"
+import pornima from "./../About/pornima.jpg"
+import nitish from "./../About/nitish.jpg"
+import rahul from "./../About/mypic.JPG"
 
 function About() {
     return (
@@ -20,6 +26,16 @@ function About() {
                 </p>
             </div>
             <h1 className='text-center hading-team'>Our Team</h1>
+
+            <div className='card-contain'>
+            <Card name='Shweta Pund' img={shweta} description="I am Shweta Pund,I have completed Bachelor of computer application from RSMDP. "/>
+            <Card name='Pournima Anjole' img={pornima} description="I am Pornima Anjole,currently pursuing graduation B.tech final year from TulsiramJi Gaikwad Patil College of Engineering And Technology."/>
+            <Card name='Nitish Kumar' img={nitish} description="I am Nitish Kumar,currently pursuing graduation B.tech final year from Govindrao wanjari college of Engineering And Technology."/>
+            <Card name='Rahul Jadhav' img={rahul} description="I am Rahul Jadhav,currently pursuing B.tech Third year from parikrama college of Engineering, kashti"/>
+            </div>
+        
+       
+        <Footer/>
         </>
     )
 }

@@ -105,23 +105,19 @@ const getuserbook =  async (req, res) => {
     try{
         const { id } = req.params
 
-        const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
-        res.status(200).json({
-            success:true,
-            data:findBooking,
-            message:" Booking fetch successfully..!"  
-          })
-    }catch(err){
-         res.status(404).send(err.message)
-
     const findBooking = await Book.find({ user: { _id: id } }).populate('user  movie')
     res.json({
         success:true,
         data:findBooking,
         message:" Booking fetch successfully..!"  
       })
+    }catch(err){
+        res.status(404).json({
+            success:false,
+            err:err.message
+        })
     }
-   
+    
 }
 
 

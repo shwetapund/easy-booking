@@ -1,5 +1,6 @@
 import react, {useState, useEffect} from 'react';
 import "./Navbar.css";
+import weblogo from "./../../assets/ticket.png"
 import {Link} from "react-router-dom";
 import logoutImg from "./../../assets/shutdown.png"
 import axios from 'axios';
@@ -43,7 +44,8 @@ function Navbar() {
 
     <nav class="navbar navbar-expand-lg color-bg">
       <div className="container-fluid">
-        <Link className="navbar-brand  fs-3 color" to="/">Easy Booking</Link>
+        <Link className="navbar-brand  fs-3 color" to="/">
+        <img src={weblogo} className='img-logo'/>Easy Booking</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -84,11 +86,13 @@ function Navbar() {
             localStorage.removeItem('user');
             window.location.href="/login"
           }}>
-            <img src={logoutImg} className='logoutimg'/>
+            <img src={logoutImg} className='logoutimg' alt=''/>
           </span>)
           : 
           null
           }
+
+
           
         </div>
         </div>

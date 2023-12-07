@@ -32,6 +32,7 @@ function AdminDashboard() {
        }catch(err){
         console.log(err.message)
        }
+      
    }
 
 
@@ -66,56 +67,55 @@ function AdminDashboard() {
   return (
     <>
          <div className='admin-main-contanier'>
+
           <div className='admin-sub-contanier container mt-3'>
           <form>
-        <div className="form-group">
-          <label htmlFor="title">Title:</label>
-          <input type="text" className="form-control" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        </div>
+        <input type="text" className="form-control text-color" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required  placeholder='Enter movie name' />
+      
 
-        <div className="form-group">
-          <label htmlFor="Imageurl">Image URL:</label>
-          <input type="text" className="form-control" id="Imageurl" name="Imageurl" value={Imageurl} onChange={(e) => setImageurl(e.target.value)} required />
-        </div>
+       
+         
+          <input type="text" className="form-control" id="Imageurl" name="Imageurl" value={Imageurl} onChange={(e) => setImageurl(e.target.value)} required  placeholder='Enter poster image'/>
+       
 
-        <div className="form-group">
-          <label htmlFor="duration">Duration:</label>
-          <input type="text" className="form-control" id="duration" name="duration" value={duration} onChange={(e) => setDuration(e.target.value)} required />
-        </div>
+      
+         
+          <input type="text" className="form-control" id="duration" name="duration" value={duration} onChange={(e) => setDuration(e.target.value)} required  placeholder='Enter time duration'/>
+      
 
-        <div className="form-group">
+       
           <label htmlFor="releaseDate">Release Date:</label>
-          <input type="date" className="form-control" id="releaseDate" name="releaseDate" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} required />
-        </div>
+          <input type="date" className="form-control" id="releaseDate" name="releaseDate" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} required  />
+      
 
-        <div className="form-group">
-          <label htmlFor="movieType">Movie Type:</label>
-          <input type="text" className="form-control" id="movieType" name="movieType" value={movieType} onChange={(e) => setMovieType(e.target.value)} required />
-        </div>
+    
+          <input type="text" className="form-control" id="movieType" name="movieType" value={movieType} onChange={(e) => setMovieType(e.target.value)} required placeholder='Enter movie type' />
+       
 
-        <div className="form-group">
-          <label htmlFor="rating">Rating:</label>
-          <input type="text" className="form-control" id="rating" name="rating" value={rating} onChange={(e) => setRating(e.target.value)} required />
-        </div>
+       
+          <input type="text" className="form-control" id="rating" name="rating" value={rating} onChange={(e) => setRating(e.target.value)} required placeholder='Enter movie rating (optional)'/>
+       
 
-        <div className="form-group">
-          <label htmlFor="description">Description:</label>
-          <input type="text" className="form-control" id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
-        </div>
+    
+        
+          <input type="text" className="form-control" id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required placeholder='Enter movie discription (optional)' />
+     
 
-        <div className="form-group">
-          <label htmlFor="language">Language:</label>
-          <input type="text" className="form-control" id="language" name="language" value={language} onChange={(e) => setLanguage(e.target.value)} required />
-        </div>
+        
+       
+          <input type="text" className="form-control" id="language" name="language" value={language} onChange={(e) => setLanguage(e.target.value)} required  placeholder='Enter movie language'/>
+       
 
         <div className="form-group">
           <button type="button" className="btn btn-outline-danger d-block mx-auto my-2 px-5" onClick={addmovie}>
-            Submit
+            SUBMIT
           </button>
         </div>
-      </form>
+        </form>
           </div>
-          <div className='admin-sub-contanier container mt-3'>
+          <h2 className='added-heading'>All Added Movie Show Here</h2>
+          <hr></hr>
+          <div className='showing-added-movie container mt-3'>
           
                 {
                   movie?.map((obj,i)=>{
@@ -134,6 +134,7 @@ function AdminDashboard() {
                
            
           </div>
+
          </div>
     </>
   )
