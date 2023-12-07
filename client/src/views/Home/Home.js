@@ -63,7 +63,7 @@ function Home(){
                     />
                   })   
                 }
-                <Link to ='/showing=booking' className='view-all'> VIEW ALL   </Link>
+                
             </div>
         </>
     )
