@@ -4,6 +4,7 @@ import './Login.css';
 import axios from 'axios';
 import Navbar from '../../components/Navbar/Navbar';
 import showToast from 'crunchy-toast';
+import Footer from '../../components/Footer/Footer';
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -61,6 +62,7 @@ function Login() {
                     </div>
 
                 </div>
+                <Footer/>
             </>
         )
     }
