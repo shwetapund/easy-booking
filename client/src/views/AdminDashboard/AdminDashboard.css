@@ -73,3 +73,13 @@ border: none;
   margin: 0 auto;
 
  }
+
+ @media screen and (max-width:360px) {
+   
+
+  .admin-sub-contanier {
+    width: 330px;
+    padding: 40px 10px;
+  }
+  
+}
