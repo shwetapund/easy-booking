@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import showToast from 'crunchy-toast';
+import Footer from "./../../components/Footer/Footer";
 //user, movie,ticketno,type,theatrename,seatno,date,time
 
 function BookingTicket() {
@@ -190,8 +191,8 @@ function BookingTicket() {
                 >Booking</button>
             </div>
 
-
-        </>
+              <Footer/>      
+                    </>
     )
 }
 export default BookingTicket
