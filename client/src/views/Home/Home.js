@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
+import Carousel from '../../components/Carousel/Carousel';
 
 function Home(){
    const [movie,setMovie]=useState([])
@@ -40,6 +41,7 @@ function Home(){
     return(
         <>
         <Navbar/>
+        <Carousel/> 
         <input
            value={search}
            onChange={e => setSearch(e.target.value)}
@@ -47,6 +49,8 @@ function Home(){
            placeholder="Search Movies"
            className='input-box'
         />
+
+       
       <h1 className='now-showing'>NOW SHOWING </h1>
             <div className='show-movie'>
                 {
