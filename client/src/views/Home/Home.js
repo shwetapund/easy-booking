@@ -52,7 +52,7 @@ function Home(){
         />
 
        
-      <h1 className='now-showing'>NOW SHOWING </h1>
+      <h1 className='now-showing text-center mt-5'>NOW SHOWING </h1>
             <div className='show-movie'>
                 {
                   movie?.map((obj,i)=>{
