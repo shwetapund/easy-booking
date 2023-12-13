@@ -1,19 +1,26 @@
 .loginsignup{
-    width: 100vw;
-    height: 100vh;
-    background-color:white ;
-    padding-top: 80px;
+    height:600px;
+    width: 1200px;
+    margin-left:125px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:white;
+    /* padding-top: 20px; */
+    display: flex;
+    justify-content:center;
+    box-shadow: 0px 0px 10px 1px blue;
 }
 .loginsinup-container{
     width: 580px;
     height: 570px;
-   
-    background-color: #fce3fe;
-    margin: auto;
-    padding: 40px 60px;
-
+    margin-top: 10px;
+    margin-left: 40px;
+    padding: 30px 60px; 
 }
-
+.signup-img{
+    height:600px;
+    margin-top: 20px;
+}
 .loginsinup-container h1{
     margin: 20px 0px;
 }
@@ -25,40 +32,53 @@
 }
 .loginsingup-fields .inputfields{
     height: 40px;
-    width: 100%;
+    width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
     padding-left: 20px;
-border: none;
-background: white;
-color: #5c5c5c;
-font-size: 18px;
+    border: 1px solid  #e6e6ff;
+    box-shadow: 0px 0px 5px 1px rgb(252, 230, 230);
+    background: white;
+    color: #5c5c5c;
+    font-size: 18px;
 }
 
 .loginsinup-container button{
-    width: 100%;
+    width: 280px;
+    border-radius: 10px;
+    cursor: pointer;
     height: 55px;
     color: white;
-    background-color: #ff4141;
-    margin-top: 20px;
+    background-color:#4d4dff;
+    display: block;
+    margin: 10px auto;
     border: none;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 500;
     cursor: pointer;
 }
-
+.loginsinup-container button:hover{
+    background-color:white;
+    color:  #0000b3;
+    border: 1px solid #0000b3;
+}
 .loginsignup-login{
     margin-top: 3px;
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
+    /* display: block; */
+text-align: center;
 }
 
+
 .radio{
-    margin-left: 10px;
-    
+    margin-left: 30px;
     }
-
-
-
+.gender-text{
+     font-size: 20px;
+}
 .loginsignup-link{
     color: #ff4141;
     cursor: pointer;

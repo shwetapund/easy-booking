@@ -46,7 +46,7 @@ export default function Footer() {
             className='contact-img'/></Link></div>
 
             <div className='contact-icon ms-4'>
-            <Link to="" className='contact-img'><img src={GithubImg} 
+            <Link to="https://github.com/shwetapund/easy-booking" className='contact-img'><img src={GithubImg} 
             className='contact-img'/></Link>
             </div>
           </div>

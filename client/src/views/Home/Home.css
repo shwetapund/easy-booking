@@ -1,12 +1,11 @@
+
 .show-movie{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 background-color: #fff;
     margin: 1rem 0;
-    
-   
-   
+  
 }
 .input-box{
     display: block;

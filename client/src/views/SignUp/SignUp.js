@@ -1,10 +1,11 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './SignUp.css';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../../components/Navbar/Navbar';
 import showToast from 'crunchy-toast';
 import Footer from '../../components/Footer/Footer';
+import signupimg from "./../../assets/signup-img.svg"
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -12,56 +13,59 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const [mobileNo, setMobileNo] = useState('')
     const [gender, setGender] = useState('female')
-   
-    const signup = async()=> {
-if(!name){
-    alert('name is required');
-    return
-}
 
-if(!email){
-    alert('email is required');
-    return
-}
+    const signup = async () => {
+        if (!name) {
+            alert('name is required');
+            return
+        }
 
-if(!password){
-    alert('password is required');
-    return
-}
+        if (!email) {
+            alert('email is required');
+            return
+        }
 
-if(!mobileNo){
-    alert('mobile no is required');
-    return
-}
-const response = await axios.post('/api/v1/signups',{
-    email:email,
-    name:name,
-    password:password,
-mobileNo:mobileNo,
-gender:gender
-})
+        if (!password) {
+            alert('password is required');
+            return
+        }
 
-showToast(response?.data?.message, 'success', 3000)
-if(response?.data?.success){
-window.location.href='/login'
-}
+        if (!mobileNo) {
+            alert('mobile no is required');
+            return
+        }
+        const response = await axios.post('/api/v1/signups', {
+            email: email,
+            name: name,
+            password: password,
+            mobileNo: mobileNo,
+            gender: gender
+        })
+
+        showToast(response?.data?.message, 'success', 3000)
+        if (response?.data?.success) {
+            window.location.href = '/login'
+        }
     }
-    
-useEffect(()=>{
-    const userfinder = JSON.parse(localStorage.getItem('user') || '{}')
 
-    if(userfinder?.email){
-        showToast('You are already logged in!', 'danger', 3000);
-        window.location.href='/';
-    }
-  
-},[])
+    useEffect(() => {
+        const userfinder = JSON.parse(localStorage.getItem('user') || '{}')
+
+        if (userfinder?.email) {
+            showToast('You are already logged in!', 'danger', 3000);
+            window.location.href = '/';
+        }
+
+    }, [])
     return (
         <>
-        <Navbar/>
+            <Navbar />
             <div className='loginsignup'>
+                <div>
+                    <img src={signupimg} className='signup-img'/>
+                </div>
                 <div className='loginsinup-container'>
-                    <h1>SignUp</h1>
+                    <h1 className='text-center'>SignUp</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
                             value={name}
@@ -96,24 +100,24 @@ useEffect(()=>{
                             className='inputfields' />
                         <div>
                             <input type='radio'
-                             name='gender' 
-                             id='male' 
-                             className='radio'
-                             checked={gender==='male'} 
-                             onClick={()=>{
-                                setGender('male')
-                             }} />
-                            <label htmlFor='male'>male</label>
+                                name='gender'
+                                id='male'
+                                className='radio'
+                                checked={gender === 'male'}
+                                onClick={() => {
+                                    setGender('male')
+                                }} />
+                            <label htmlFor='male' className='gender-text'>male</label>
 
-                            <input type='radio' 
-                            name='gender' 
-                            id='female'
-                             className='radio' 
-                             checked={gender==='female'}
-                             onClick={()=>{
-                                setGender('female')
-                             }}/>
-                            <label htmlFor='female' >female</label>
+                            <input type='radio'
+                                name='gender'
+                                id='female'
+                                className='radio'
+                                checked={gender === 'female'}
+                                onClick={() => {
+                                    setGender('female')
+                                }} />
+                            <label htmlFor='female' className='gender-text'>female</label>
                         </div>
                         <button type='button' onClick={signup} >signup</button>
                         <p className='loginsignup-login'>already have an account? <span className='loginsingup-login-span'><Link to='/login' className='loginsignup-link'>login</Link>
@@ -121,7 +125,7 @@ useEffect(()=>{
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }

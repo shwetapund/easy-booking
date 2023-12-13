@@ -27,10 +27,13 @@
 .admin-text{
     font-size: 10px;
 }
-    
+.font-size{
+    font-size: 20px !important;
+    font-weight: 600 !important;
+} 
 .color{
     color: white !important;
-    font-weight: bold;
+  
 }
 .color-bg{
     background-color:#000066 !important;
@@ -42,6 +45,14 @@
 .logout-text{
     color: white;
 }
+.btn-search{
+    background-color: aliceblue !important;
+    border: 0.5px solid red !important;
+}
+.btn-search:hover{
+    background-color: red !important;
+}
+
 @media screen and (max-width:768px){
     .toggle-after{
         color: white !important;

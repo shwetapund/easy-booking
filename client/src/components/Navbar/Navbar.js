@@ -46,42 +46,42 @@ function Navbar() {
 
     <nav class="navbar navbar-expand-lg color-bg">
       <div className="container-fluid">
-        <Link className="navbar-brand  fs-3 color" to="/">
+        <Link className="navbar-brand  fs-4 color" to="/">
         <img src={weblogo} className='img-logo'/>Easy Booking</Link>
         <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon "></span>
         </button>
-        <div className="collapse navbar-collapse fs-5 " id="navbarSupportedContent">
+        <div className="collapse navbar-collapse font-size" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto color">
             <li className="nav-item">
-              <Link className="nav-link active  me-5 color" aria-current="page" to="/">Home</Link>
+              <Link className="nav-link  me-5 color font-size" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/booking">Booking</Link>
+              <Link className="nav-link me-5 color font-size" aria-current="page" to="/booking">Booking</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/about">About</Link>
+              <Link className="nav-link me-5 color font-size" aria-current="page" to="/about">About</Link>
             </li>
             {user.email ? null : <> <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/login">Login</Link>
+              <Link className="nav-link me-5 color font-size" aria-current="page" to="/login">Login</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/signup">SignUp</Link>
+              <Link className="nav-link me-5 color font-size" aria-current="page" to="/signup">SignUp</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
+              <Link className="nav-link me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
             </li>
 </>}
           </ul>
           <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" value={address}/>
-        <button class="btn btn-outline-danger" type="button" onClick={fetchLocation}>Search</button>
+       
+        {/* <button class="btn btn-search" type="button" onClick={fetchLocation}>Search</button> */}
         </form>
         {/* <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search Prefered" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> */}
-        <div className='logout-text'>
+        <div className='logout-text font-size'>
           <span className='ms-3'>Hello,</span> {user.name || 'user!'}
           {user?.name ? 
           (<span onClick={()=>{
