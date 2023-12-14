@@ -47,7 +47,7 @@ const AdminLogin = () => {
       <div>
         <img src={adminlogin} className='login-img' />
       </div>
-      <div className='loginsinup-container'>
+      <div className='loginsinup-container '>
         <h1 className='text-center regi-text'>Admin Login</h1>
         <div className='loginsingup-fields'>
           <input

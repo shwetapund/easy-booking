@@ -44,7 +44,7 @@ function Login() {
                 <div>
                     <img src={loginIMG} className='login-img'/>
                 </div>
-                <div className=' login-container '>
+                <div className='login-container'>
                     <h1 className='text-center regi-text'>Easy Booking</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
@@ -53,7 +53,7 @@ function Login() {
                                 setEmail(e.target.value)
                             }}
                             placeholder='enter your email'
-                            className='inputfields' />
+                            className='inputfields ip' />
 
                         <input type='text'
                             value={password}
