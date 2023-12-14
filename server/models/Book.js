@@ -23,7 +23,7 @@ import { Schema, model } from "mongoose";
         required : true
     },
     seatno:{
-        type: String,
+        type: Array,
         required : false
     },
     date:{

@@ -9,6 +9,7 @@ import Footer from "./../../components/Footer/Footer";
 function Booking() {
     const [booking, setBooking] = useState([])
     const [user, setUser] = useState({});
+    
 
 
     const loadBooking = async ()=>{
@@ -62,7 +63,7 @@ function Booking() {
 
                             <p className='text-booking-info'>Theater Name: <span className='get-booking-text'>{theatrename}</span> </p>
 
-                            <p className='text-booking-info'>Seat No: <span className='get-booking-text'>{seatno}</span></p>
+                            <p className='text-booking-info'>Seat No:  <span className='get-booking-text'>{seatno}</span></p>
 
                             <p className='text-booking-info'>Date: <span className='get-booking-text'>{date}</span> </p>
 

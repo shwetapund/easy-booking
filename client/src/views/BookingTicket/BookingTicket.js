@@ -16,10 +16,12 @@ function BookingTicket() {
     const [theatrename, setTheatrename] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
+    const [selectedSeats, setSelectedSeats] = useState([]);
+
 
     const loadMovie = async () => {
         const response = await axios.get(`/api/v1/bookmovie/${id}`)
-       setMovie(response?.data?.data);
+        setMovie(response?.data?.data);
 
     }
     useEffect(() => {
@@ -36,36 +38,46 @@ function BookingTicket() {
             theatrename: theatrename,
             date: date,
             time: time,
-            seatno:Math.floor(Math.random() *100)
+            seatno: selectedSeats
         }
-       try{
-        const response = await axios.post('/api/v1/bookmovie', bookingdetails);
+        try {
+            const response = await axios.post('/api/v1/bookmovie', bookingdetails);
 
-        alert(response?.data?.message);
+            alert(response?.data?.message);
 
-        if (response?.data?.success===true) {
+            if (response?.data?.success === true) {
 
-            window.location.href = '/booking';
+                window.location.href = '/booking';
+            }
+        } catch (err) {
+            console.log(err.message);
         }
-       }catch(err){
-        console.log(err.message);
-       }
 
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const userfind = JSON.parse(localStorage.getItem('user') || '{}');
-        
-        if(userfind?.email){
-          setUser(userfind);
+
+        if (userfind?.email) {
+            setUser(userfind);
         }
-        else{
-          showToast('You are not Logged In', 'danger', 3000);
-          window.location.href='/login'
+        else {
+            showToast('You are not Logged In', 'danger', 3000);
+            window.location.href = '/login'
         }
-    
-    },[])
-    
+
+    }, [])
+
+
+
+    const handleSeatClick = (seatNumber) => {
+
+        if (selectedSeats.includes(seatNumber)) {
+            setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
+        } else {
+            setSelectedSeats([...selectedSeats, seatNumber]);
+        }
+    };
 
     return (
         <>
@@ -81,7 +93,7 @@ function BookingTicket() {
                             <p>{movie.movieType}</p>
                         </div>
                         <h3 className='text-center'>{movie.title}</h3>
-                    
+
                     </div>
 
                     <div className='left-hand-container'>
@@ -181,8 +193,48 @@ function BookingTicket() {
                         </div>
 
 
+                        <div className='seat-container'>
+                            <p className='chooseseat'>Choose Your Seat</p>
+                            <div className='row-container'>
+                                {[" 01", " 02", " 03", " 04", " 05"].map((seat) => (
+                                    <p
+                                        value={selectedSeats}
+                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
+                                        onClick={() => { handleSeatClick(seat) }}
+                                    >
+                                        {seat}
+                                    </p>
+                                ))}
+                            </div>
+
+
+                            <div className='row-container'>
+                                {[" 06", " 07", " 08", " 09", " 10"].map((seat) => (
+                                    <p
+                                        value={selectedSeats}
+                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
+                                        onClick={() => { handleSeatClick(seat) }}
+                                    >
+                                        {seat}
+                                    </p>
+                                ))}
+                            </div>
+                            <div className='row-container'>
+                                {[" 11", " 12", " 13", " 14", " 15"].map((seat) => (
+                                    <p
+                                        value={selectedSeats}
+                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
+                                        onClick={() => { handleSeatClick(seat) }}
+                                    >
+                                        {seat}
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
 
                 <button
                     className='booking-btn'
@@ -190,8 +242,25 @@ function BookingTicket() {
                 >Booking</button>
             </div>
 
-              <Footer/>      
-                    </>
+            <Footer />
+        </>
     )
 }
 export default BookingTicket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
