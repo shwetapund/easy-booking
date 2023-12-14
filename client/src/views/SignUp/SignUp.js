@@ -65,7 +65,7 @@ function SignUp() {
                     <img src={signupimg} className='signup-img'/>
                 </div>
                 <div className='loginsinup-container'>
-                    <h1 className='text-center'>SignUp</h1>
+                    <h1 className='text-center regi-text'>Easy Booking</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
                             value={name}
@@ -107,7 +107,7 @@ function SignUp() {
                                 onClick={() => {
                                     setGender('male')
                                 }} />
-                            <label htmlFor='male' className='gender-text'>male</label>
+                            <label htmlFor='male' className='gender-text'>&nbsp;Male</label>
 
                             <input type='radio'
                                 name='gender'
@@ -117,10 +117,10 @@ function SignUp() {
                                 onClick={() => {
                                     setGender('female')
                                 }} />
-                            <label htmlFor='female' className='gender-text'>female</label>
+                            <label htmlFor='female' className='gender-text'>&nbsp;Female</label>
                         </div>
-                        <button type='button' onClick={signup} >signup</button>
-                        <p className='loginsignup-login'>already have an account? <span className='loginsingup-login-span'><Link to='/login' className='loginsignup-link'>login</Link>
+                        <button type='button' onClick={signup} >Signup</button>
+                        <p className='loginsignup-login'>Already have an account? <span className='loginsingup-login-span'><Link to='/login' className='loginsignup-link'>login</Link>
                         </span></p>
                     </div>
                 </div>
