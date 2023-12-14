@@ -5,6 +5,7 @@ import axios from 'axios';
 import Navbar from '../../components/Navbar/Navbar';
 import showToast from 'crunchy-toast';
 import Footer from '../../components/Footer/Footer';
+import loginIMG from './../../assets/loginImg-1.svg';
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -39,9 +40,12 @@ function Login() {
     return (
         <>
             <Navbar />
-            <div className='login-page '>
+            <div className='login-page'>
+                <div>
+                    <img src={loginIMG} className='login-img'/>
+                </div>
                 <div className=' login-container '>
-                    <h1>login</h1>
+                    <h1 className='text-center'>login</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
                             value={email}

@@ -3,7 +3,7 @@ import './About.css';
 import Footer from "./../../components/Footer/Footer";
 import Navbar from './../../components/Navbar/Navbar';
 import bokking from "./../About/easy.jpg"
-import { Link } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import shweta from "./../About/shweta1.jpg"
 import pornima from "./../About/pornima.jpg"
@@ -11,6 +11,7 @@ import nitish from "./../About/nitish.jpg"
 import rahul from "./../About/mypic.JPG"
 
 function About() {
+
     return (
         <>
             <Navbar />

@@ -2,13 +2,13 @@
 .img-booking{
     height: 330px;
     width: 300px;
-    margin-right: 100px;
+    margin-right: 200px;
     border-radius: 10px;
 }
 .ALL-booking-container{
     /* height: 400px; */
-    width: 770px;
-    box-shadow: 0px 0px 10px 1px rgb(248, 133, 133);
+    width: 1000px;
+    box-shadow: 0px 0px 10px 0.1px lightblue;
     display: block;
     margin: 60px auto;
     border-radius: 10px;
@@ -24,10 +24,11 @@
 }
 .text-booking-info{
     color: black;
-
+    
 }
 .get-booking-text{
     color: rgb(250, 93, 93);
+    margin-left: 10px;
 }
 
 @media screen and (max-width:768px){

@@ -10,15 +10,17 @@ background-color: #fff;
 .input-box{
     display: block;
     outline: none;
-    margin: 7px auto;
+    margin: 15px auto;
     border: none;
     border-bottom: 2px solid black;
     padding: 5px 10px;
+
 }
 .now-showing{
     font-size: 1.3rem ;
     font-weight: 700;
     padding-left: 1.4rem;
+    color:#000066;
 }
 .view-all{
     text-decoration: none;
