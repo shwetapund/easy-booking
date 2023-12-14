@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './../Login/Login.css';
 import axios from 'axios';
+import adminlogin from "./../../assets/admin-login.svg"
+import "./AdminLogin.css";
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const login = async () => {
-      
+
     try {
       const response = await axios.post('/api/v1/admin/logins', {
         email: email,
@@ -26,20 +30,25 @@ const AdminLogin = () => {
       alert('An error occurred during login.');
     }
   }
-useEffect(()=>{
-  try{
-    const adminUser=JSON.parse(localStorage.getItem('admin') || {})
-    if(adminUser){
-      window.location.href='/admin-dashboard'
+  useEffect(() => {
+    try {
+      const adminUser = JSON.parse(localStorage.getItem('admin') || {})
+      if (adminUser) {
+        window.location.href = '/admin-dashboard'
+      }
+    } catch (err) {
+      console.log(err.message)
     }
-  }catch(err){
-    console.log(err.message)
-  }
-},[])
+  }, [])
   return (
-    <div className='loginsignup'>
-      <div className='loginsinup-container '>
-        <h1>Admin Login</h1>
+    <>
+    <Navbar/>
+    <div className='loginsignup login-admin'>
+      <div>
+        <img src={adminlogin} className='login-img' />
+      </div>
+      <div className='loginsinup-container'>
+        <h1 className='text-center regi-text'>Admin Login</h1>
         <div className='loginsingup-fields'>
           <input
             type='text'
@@ -63,6 +72,8 @@ useEffect(()=>{
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

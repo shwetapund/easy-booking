@@ -45,7 +45,7 @@ function Login() {
                     <img src={loginIMG} className='login-img'/>
                 </div>
                 <div className=' login-container '>
-                    <h1 className='text-center'>login</h1>
+                    <h1 className='text-center regi-text'>Easy Booking</h1>
                     <div className='loginsingup-fields'>
                         <input type='text'
                             value={email}
@@ -63,7 +63,7 @@ function Login() {
                             placeholder='enter your password'
                             className='inputfields' />
 
-                        <button type='button' onClick={login} >login</button>
+                        <button type='button' onClick={login} >Login</button>
 
                         <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signUp' className='loginsignup-link'>Signup</Link>
                         </span></p>

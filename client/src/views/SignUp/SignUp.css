@@ -45,9 +45,10 @@
 }
 
 .loginsinup-container button{
-    width: 90%;
+    width: 85%;
     height: 55px;
     color: white;
+    border-radius: 10px;
     background-color:#fc3434;
     border: none;
     font-size: 24px;
