@@ -29,10 +29,10 @@ function About() {
             <h1 className='text-center hading-team'>Our Team</h1>
 
             <div className='card-contain'>
-            <Card name='Shweta Pund' img={shweta} description="I am Shweta Pund,I have completed Bachelor of computer application from RSMDP. "/>
-            <Card name='Pournima Anjole' img={pornima} description="I am Pornima Anjole,currently pursuing graduation B.tech final year from TulsiramJi Gaikwad Patil College of Engineering And Technology."/>
+            <Card name='Shweta Pund' img={shweta} description="I am Shweta Pund,I have completed Bachelor of computer application from RSMDP, Rahuri Dist: Ahmadnagar "/>
+            <Card name='Pournima Anjole' img={pornima} description="I am Pornima Anjole,currently pursuing graduation B.tech final year from TulsiramJi Gaikwad Patil College of Engineering"/>
             <Card name='Nitish Kumar' img={nitish} description="I am Nitish Kumar,currently pursuing graduation B.tech final year from Govindrao wanjari college of Engineering And Technology."/>
-            <Card name='Rahul Jadhav' img={rahul} description="I am Rahul Jadhav,currently pursuing B.tech Third year from parikrama college of Engineering, kashti"/>
+            <Card name='Rahul Jadhav' img={rahul} description="I am Rahul Jadhav,currently pursuing B.tech Third year from parikrama college of Engineering, kashti , Dist: A.Nagar"/>
             </div>
         
        

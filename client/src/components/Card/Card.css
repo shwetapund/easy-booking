@@ -1,7 +1,7 @@
 .card-container{
     background-color: aliceblue;
     border-radius: 10px;
-    
+    height: 500px;
     width: 300px;
     margin-bottom: 100px;
     margin-top: 50px;
@@ -17,4 +17,14 @@
     text-align: justify;
     margin: 0px 20px;
     margin-bottom: 5px;
+}
+.logo-container{
+    display: flex;
+    justify-content: space-around;
+}
+.socil-logo{
+    height: 30px;
+   display: block;
+   margin-top: 10px;
+   border-radius: 5px;
 }

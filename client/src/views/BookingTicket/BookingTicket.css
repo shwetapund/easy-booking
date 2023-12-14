@@ -105,7 +105,7 @@ margin-top: 20px;
     }
     .booking-container{
         width: 280px;
-        height:730px;
+        height:930px;
     }
     .movie-iamge{
         height: 200px;
@@ -144,5 +144,9 @@ margin-top: 20px;
             padding: 5px 10px;
             width: 170px;
        
+        }
+        .seat-container{
+            width: 250px;
+            margin: 0px auto;
         }
 }
