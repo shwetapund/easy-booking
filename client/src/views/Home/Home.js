@@ -10,15 +10,34 @@ import Footer from '../../components/Footer/Footer';
 function Home(){
    const [movie,setMovie]=useState([])
    const [search,setSearch]=useState('')
+   const [action,setAction]=useState([])
+   const [drama , setDrama]=useState([])
+   const [horror,setHorror]=useState([])
 
    const loadMovie = async()=>{
     try{
-        const responce=await axios.get('/api/v1/movies')
+        const responce= await axios.get('/api/v1/movies')
         setMovie(responce?.data?.data)
+        const movieData = responce?.data?.data  
+
+        const actionMoviesData = movieData.filter(movie => movie.movieType === "Action");
+        setAction(actionMoviesData);
+
+        const dramaMoviesData = movieData.filter(movie => movie.movieType === "Drama");
+        setDrama(dramaMoviesData);
+
+        const horrorMoviesData = movieData.filter(movie => movie.movieType === "Horror");
+       setHorror(horrorMoviesData)
+
+        
+
+      
     }catch(err){
         console.error(err.message);
     }
    }
+
+console.log("Action =",action);
 
    const searchMovie = async()=>{
     if(search===''){
@@ -35,10 +54,10 @@ function Home(){
 
    useEffect(()=>{searchMovie()},[search])
 
-
    useEffect(()=>{
      loadMovie()
    },[])
+
     return(
         <>
         <Navbar/>
@@ -53,9 +72,11 @@ function Home(){
 
        
       <h1 className='now-showing text-center mt-5'>NOW SHOWING</h1>
-            <div className='show-movie'>
-                {
-                  movie?.map((obj,i)=>{
+
+      <h2>Action</h2>
+      <div className='show-movie'>
+      {
+                  action?.map((obj,i)=>{
                     const {_id,Imageurl,rating,movieType,title,language}=obj
                     return <MovieCard
                     _id={_id}
@@ -68,8 +89,44 @@ function Home(){
                     />
                   })   
                 }
-                
-            </div>
+      </div>
+
+      <h2>Drama</h2>
+      <div className='show-movie'>
+      {
+                  drama?.map((obj,i)=>{
+                    const {_id,Imageurl,rating,movieType,title,language}=obj
+                    return <MovieCard
+                    _id={_id}
+                    key={i}
+                      Imageurl={Imageurl}
+                      rating={rating}
+                      movieType={movieType}
+                      title={title}
+                      language={language}
+                    />
+                  })   
+                }
+      </div>
+
+      <h2>Horror</h2>
+      <div className='show-movie'>
+      {
+                  horror?.map((obj,i)=>{
+                    const {_id,Imageurl,rating,movieType,title,language}=obj
+                    return <MovieCard
+                    _id={_id}
+                    key={i}
+                      Imageurl={Imageurl}
+                      rating={rating}
+                      movieType={movieType}
+                      title={title}
+                      language={language}
+                    />
+                  })   
+                }
+      </div>
+
             <Footer/>
         </>
     )

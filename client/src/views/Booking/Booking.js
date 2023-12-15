@@ -50,7 +50,6 @@ function Booking() {
       head: [['Field', 'Value']],
       body: [
         ['Movie', movie?.title],
-        ['Ticket No', ticketno],
         ['Type', type],
         ['Theater Name', theatrename],
         ['Seat No', seatno],
@@ -80,7 +79,7 @@ function Booking() {
               <p className='text-booking-info'>Seat No: <span className='get-booking-text'>{seatno}</span></p>
               <p className='text-booking-info'>Date: <span className='get-booking-text'>{date}</span></p>
               <p className='text-booking-info'>Time: <span className='get-booking-text'>{time}</span></p>
-              <button className='btn-dawnload' onClick={() => {downloadPDF(bookingInstance)}}>Download ⬇️</button>
+              <button className='btn-dawnload' type='button' onClick={() => {downloadPDF(bookingInstance)}}>Download ⬇️</button>
             </div>
           </div>
         );
