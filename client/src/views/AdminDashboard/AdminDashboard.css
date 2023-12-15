@@ -132,5 +132,11 @@ height: 40px;
     width: 330px;
     padding: 40px 10px;
   }
+  .admin-img{
+    display: none;
+  }
+  .release-date{
+    margin-left: 3rem;
+  }
   
 }
