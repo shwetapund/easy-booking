@@ -56,16 +56,16 @@ function AdminDashboard() {
     }
   }
 
-  const remove = async(_id)=>{
-    try{
+  const remove = async (_id) => {
+    try {
       const responce = await axios.delete(`/api/v1/movie/${_id}`)
 
-      if(responce?.data?.success===true){
+      if (responce?.data?.success === true) {
         alert(responce?.data?.message)
         window.location.reload()
       }
-      
-    }catch(e){
+
+    } catch (e) {
       console.log(e.message)
     }
   }
@@ -86,7 +86,7 @@ function AdminDashboard() {
         </div>
 
         <div className='admin-main-contanier'>
-<h1 className='text-aline'>Admin Dashboard</h1>
+          <h1 className='text-aline'>Admin Dashboard</h1>
           <div className='admin-sub-contanier container mt-3'>
             <form>
               <input type="text" className="form-control text-color" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required placeholder='Enter movie name' />
@@ -129,38 +129,6 @@ function AdminDashboard() {
 
 
 
-            <div className="form-group">
-              <button type="button" className="btn btn-outline-danger d-block mx-auto my-2 px-5" onClick={addmovie}>
-                SUBMIT
-              </button>
-            </div>
-          </form>
-        </div>
-        <h2 className='added-heading'>All Added Movie Show Here</h2>
-        <hr></hr>
-        <div className='showing-added-movie container mt-3'>
-
-          {
-            movie?.map((obj, i) => {
-              const { _id, Imageurl, rating, movieType, title, language } = obj
-              return <MovieCard
-                _id={_id}
-                key={i}
-                Imageurl={Imageurl}
-                rating={rating}
-                movieType={movieType}
-                title={title}
-                language={language}
-                remove={()=>{remove(_id)}}
-              />
-              
-            })
-          }
-
-              <input type="text" className="form-control" id="language" name="language" value={language} onChange={(e) => setLanguage(e.target.value)} required placeholder='Enter movie language' />
-
-
-
               <div className="form-group">
                 <button type="button" className="btn btn-outline-danger d-block mx-auto my-2 px-5" onClick={addmovie}>
                   SUBMIT
@@ -170,6 +138,9 @@ function AdminDashboard() {
           </div>
         </div>
       </div>
+
+
+
 
 
 
@@ -194,6 +165,8 @@ function AdminDashboard() {
         }
 
       </div>
+
+
       <Footer />
     </>
   )
