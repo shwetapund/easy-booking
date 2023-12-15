@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import showToast from 'crunchy-toast';
 import Footer from "./../../components/Footer/Footer";
+import theaterData from "./BookingTicket.json";
 //user, movie,ticketno,type,theatrename,seatno,date,time
 
 function BookingTicket() {
@@ -17,7 +18,8 @@ function BookingTicket() {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [selectedSeats, setSelectedSeats] = useState([]);
-
+    const [selectedCity, setSelectedCity] = useState(theaterData);
+    const [selectedTheater,setSelectedTheater] = useState([]);
 
     const loadMovie = async () => {
         const response = await axios.get(`/api/v1/bookmovie/${id}`)
@@ -68,9 +70,7 @@ function BookingTicket() {
 
     }, [])
 
-
-
-    const handleSeatClick = (seatNumber) => {
+ const handleSeatClick = (seatNumber) => {
 
         if (selectedSeats.includes(seatNumber)) {
             setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
@@ -78,6 +78,11 @@ function BookingTicket() {
             setSelectedSeats([...selectedSeats, seatNumber]);
         }
     };
+
+const handleSelectCity = (e)=>{
+    setSelectedCity(e.target.value);
+}
+const theatre = selectedCity ? theaterData[selectedCity] : [];
 
     return (
         <>
@@ -143,25 +148,39 @@ function BookingTicket() {
                                 /> &nbsp; <span className='type-text'>Silver: 200 Rs</span>
                             </div>
                         </div>
+                        <div className='mt-4'>
+                            <select
+                                value={selectedCity}
+                                onChange={handleSelectCity}
+                                className='form-handle'>
+                                <option>Select here to City</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Aurangabad">Aurangabad</option>
+
+                            </select>
+                        </div>
                     </div>
 
                     <div className='right-hand-container'>
 
                         <div>
+                            
                             <select
-                                value={theatrename}
-                                onChange={(e) => {
-                                    setTheatrename(e.target.value);
-                                }}
+                                onChange={(e)=>{setTheatrename(e.target.value)}}
                                 className='form-handle'>
-                                <option>Select here to Theater Name</option>
-                                <option value="cinepoliscinemas">Cinepolis Cinemas (Seasons Mall)</option>
-                                <option value="city-pride-cinemas">City Pride Cinemas (Abhircuhi Mall)</option>
-                                <option value="city-pride-multiplex">City Pride Multiplex.</option>
-                                <option value="e-square-multiplex">E Square Multiplex</option>
-                                <option value="victory-theatre">Victory Theatre.</option>
-                                <option value="carnival-cinemas">Carnival Cinemas</option>
-
+                            <option   value="" >Select Theater</option>
+                                {
+                                    theatre?.map((theater, index)=>{
+                                        return(
+                                            <>
+                                               <option key={index} value={theater}>{theater}</option>
+                                            </>
+                                        )
+                                    })
+                                       
+                                      
+                                }
                             </select>
                         </div>
 
