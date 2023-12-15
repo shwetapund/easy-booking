@@ -29,6 +29,15 @@ const addMovie = async (req,res)=>{
     }
 }
 
+const delMovie = async (req, res) => {
+    const { id } = req.params;
+    await Movie.deleteOne({ _id:id })
+    res.json({
+        message: "Movie Delete Successfully",
+        success: true
+    })
+}
+
 const getAllMovies= async(req,res)=>{
    try{
     const getAllMovies=await Movie.find({})
@@ -118,6 +127,6 @@ const getuserbook =  async (req, res) => {
 }
 
 
-export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie, getMovieById}
+export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie, getMovieById,delMovie}
 
 

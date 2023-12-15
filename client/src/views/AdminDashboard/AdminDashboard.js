@@ -55,9 +55,25 @@ function AdminDashboard() {
     }
   }
 
+  const remove = async(_id)=>{
+    try{
+      const responce = await axios.delete(`/api/v1/movie/${_id}`)
+
+      if(responce?.data?.success===true){
+        alert(responce?.data?.message)
+        window.location.reload()
+      }
+      
+    }catch(e){
+      console.log(e.message)
+    }
+  }
+
   useEffect(() => {
     loadMovie()
   }, [])
+
+
 
 
   return (
@@ -131,7 +147,9 @@ function AdminDashboard() {
                 movieType={movieType}
                 title={title}
                 language={language}
+                remove={()=>{remove(_id)}}
               />
+              
             })
           }
 
