@@ -12,8 +12,8 @@
      And **Logout** option is also available for the User and Admin.
 
 * **Search Movies:** 
-Users can search movies like horror movie.
-![herromovies](types.png)
+Users can search movies like Action movie.
+![actionMovie]("./../client/src/assets/movie.png)
 
 * **Ticket Booking:** In Ticket Booking user can select or Choose a specific 
 Theater based on city, and Date, Showtime and also user can select Seat. 
