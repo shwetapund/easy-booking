@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';
 import Carousel from '../../components/Carousel/Carousel';
 import Footer from '../../components/Footer/Footer';
 import longImg from "./../Home/horizontal.avif";
-import bookmob from "./../Home/bookshow.jpg"
+import bookmob from "./../Home/bookshow.jpg";
+
+
+
 
 function Home() {
   const [movie, setMovie] = useState([])
@@ -70,6 +73,8 @@ function Home() {
   useEffect(() => {
     loadMovie()
   }, [])
+
+  
 
   return (
     <>
@@ -148,7 +153,11 @@ function Home() {
         </div>
         <div>< img className='bookmob-img' src={bookmob}/></div>
       </div>
+      
+      
       <Footer />
+
+     
     </>
   )
 }

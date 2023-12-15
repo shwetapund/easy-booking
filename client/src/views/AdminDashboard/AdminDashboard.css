@@ -1,34 +1,70 @@
 /* AdminDashboard.css */
 
+.admin-img{
+  height: 600px;
+  margin-top: 20px;
+ }
+ 
+
+.admin-container{
+  height: 700px;;
+  width: 80vw;
+  
+  margin:50px auto;
+  margin-bottom: 50px;
+  background-color:white;
+  /* padding-top: 20px; */
+  display: flex;
+  justify-content:center;
+  box-shadow: 0px 0px 10px 0.1px lightblue;
+}
+
 .admin-main-contanier {
-   width: 100vw;
+   /* width: 100vw;
    height: 100vh;
-   background-color: #fff;
-   padding-top: 50px;
+   background-color: #fff; */
+   margin-top: 20px;
+   /* border: 1px solid black; */
+   width:100vw ;
+   height: 90vh;
+   width: 580px;
+    
+    
+
     
   }
   
   .admin-sub-contanier {
-    width: 900px;
-    height: 630px;
-       background-color: #fce3fe ;
-       margin: auto;
-       padding: 40px 60px;
-
-       display: flex;
-       flex-direction: column;
-      
-       gap: 20px;
-       margin-top: 30px;
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    /* border: 1px solid black; */
 
   }
+
+  
+
   
   .admin-sub-contanier   .form-control{
-    height: 40px;
+    /* height: 40px;
     width: 100%;
     padding-left: 20px;
 margin: 1rem 0;
-border: none;
+border: none; */
+
+height: 40px;
+    width: 70%;
+    border-radius: 10px;
+    display: block;
+    margin: 1rem auto;
+    padding-left: 20px;
+    border: 1px solid  #e6e6ff;
+    box-shadow: 0px 0px 5px 1px rgb(252, 230, 230);
+    background: white;
+    color: #5c5c5c;
+    font-size: 18px;
 
    
   }
@@ -36,7 +72,20 @@ border: none;
   color: #5c5c5c;
   font-size: 18px;
  }
+.release-date{
+  margin-left: 5.1rem;
+  width: 70%;
+  height: 40px;
+  padding-left: 2rem;
+  font-size: 18px;
+  border: 1px solid  #e6e6ff;
+  border-radius:10px ;
+}
 
+.text-aline{
+  text-align: center;
+  color:#03038d;
+}
 
   
   .btn-outline-danger {
@@ -73,13 +122,21 @@ border: none;
   margin: 0 auto;
 
  }
+ 
 
- @media screen and (min-width:360px ) {
+
+ @media screen and (max-width:768px ) {
    
 
   .admin-sub-contanier {
     width: 330px;
     padding: 40px 10px;
+  }
+  .admin-img{
+    display: none;
+  }
+  .release-date{
+    margin-left: 3rem;
   }
   
 }
