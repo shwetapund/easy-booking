@@ -22,11 +22,11 @@ type:String
   },
   movieType: {
     type: String,
-   
+    enum : ['drama','action','horror','other'],
+    default :'other'
   },
   rating: {
     type: Number,
-   
   },
   description:{
     type:String

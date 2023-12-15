@@ -16,6 +16,7 @@
     flex-wrap: wrap;
     padding: 35px 20px;
     justify-content:center;
+    position: relative;
 }
 .booking-information{
     font-size: 20px;
@@ -29,6 +30,19 @@
 .get-booking-text{
     color: rgb(250, 93, 93);
     margin-left: 10px;
+}
+.btn-dawnload{
+    background-color: rgb(70, 203, 70);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
 }
 
 @media screen and (max-width:768px){
