@@ -1,30 +1,82 @@
-
-.show-movie{
+.show-movie {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-background-color: #fff;
-    margin: 1rem 0;
-  
+    background-color: #fff;
+    margin: 1rem 0;   
 }
-.input-box{
+.input-box {
     display: block;
     outline: none;
     margin: 15px auto;
     border: none;
     border-bottom: 2px solid black;
     padding: 5px 10px;
-
+    width: 300px;
 }
-.now-showing{
-    font-size: 1.3rem ;
+
+.now-showing {
+    font-size: 1.3rem;
     font-weight: 700;
     padding-left: 1.4rem;
-    color:#000066;
+    color: #000066;
 }
-.view-all{
+
+.view-all {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 400;
     color: black;
+}
+
+.action-heading {
+    color: tomato;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    
+}
+.long-img{
+    display: block;
+    margin: 30px auto;
+    border-radius: 5px;
+    
+}
+.book-mob-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    flex-wrap: wrap;
+}
+.bookmob-img{
+    width: 500px;
+    height: 500px;
+}
+.text-mob{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+@media (max-width: 768px){
+    .long-img{
+        width: 350px;
+        height: 70px;
+        display: block;
+        margin: 0px auto;
+    }
+    .action-heading{
+        margin-left: 10px;
+    }
+
+    .bookmob-img{
+        width: 300px;
+        height: 350px;
+    }
+    .text-mob{
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .pp{
+        margin-left: 20px;
+    }
 }
