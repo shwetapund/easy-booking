@@ -4,6 +4,7 @@ import weblogo from "./../../assets/ticket.png"
 import {Link} from "react-router-dom";
 import logoutImg from "./../../assets/shutdown.png"
 import axios from 'axios';
+import logo from "./../Navbar/easybook-logo.png"
 
 function Navbar() {
   const [address,setAddress]=useState('')
@@ -44,9 +45,9 @@ function Navbar() {
   },[])
   return (
 
-    <nav class="navbar navbar-expand-lg color-bg">
+    <nav class="navbar ppn navbar-expand-lg color-bg">
       <div className="container-fluid">
-        <Link className="navbar-brand  fs-4 color" to="/">
+        <Link className="navbar-brand  fs-5 color" to="/">
         <img src={weblogo} className='img-logo'/>Easy Booking</Link>
         <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon "></span>

@@ -46,14 +46,14 @@ function Login() {
                 </div>
                 <div className='login-container'>
                     <h1 className='text-center regi-text'>Easy Booking</h1>
-                    <div className='loginsingup-fields'>
+                    <div className='ip'>
                         <input type='text'
                             value={email}
                             onChange={(e) => {
                                 setEmail(e.target.value)
                             }}
                             placeholder='enter your email'
-                            className='inputfields ip' />
+                            className='ipfields' />
 
                         <input type='text'
                             value={password}
@@ -61,9 +61,9 @@ function Login() {
                                 setPassword(e.target.value)
                             }}
                             placeholder='enter your password'
-                            className='inputfields' />
+                            className='ipfields' />
 
-                        <button type='button' onClick={login} >Login</button>
+                        <button className='login-button' type='button' onClick={login} >Login</button>
 
                         <p className='loginsignup-login'>Don't have an account? <span className='loginsingup-login-span'><Link to='/signUp' className='loginsignup-link'>Signup</Link>
                         </span></p>
