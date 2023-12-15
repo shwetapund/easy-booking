@@ -52,7 +52,6 @@
 .btn-search:hover{
     background-color: red !important;
 }
-
 @media screen and (max-width:768px){
     .toggle-after{
         color: white !important;

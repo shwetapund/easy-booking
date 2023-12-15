@@ -3,9 +3,6 @@ import Book from "../models/Book.js";
 
 const addMovie = async (req,res)=>{
     const {title,Imageurl,duration,releaseDate,movieType,rating,description,language}=req.body;
-    // if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
-    //     res.status(400).send({msg:"All fields are required"})
-    // }
     const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
