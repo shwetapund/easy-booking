@@ -22,7 +22,7 @@ type:String
   },
   movieType: {
     type: String,
-    enum : ['drama','action','horror','other'],
+    enum : ['Drama','Action','Horror','Other'],
     default :'other'
   },
   rating: {
