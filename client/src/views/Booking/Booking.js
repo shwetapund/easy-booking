@@ -57,7 +57,7 @@ function Booking() {
         ['Time', time],
       ],
     });
-    pdf.save(`Booking_${ticketno}.pdf`);
+    pdf.save(`Booking_${movie.title}.pdf`);
   };
 
   return (

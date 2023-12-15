@@ -1,15 +1,15 @@
-import react, {useState, useEffect} from 'react';
+import react, { useState, useEffect } from 'react';
 import "./Navbar.css";
 import weblogo from "./../../assets/ticket.png"
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoutImg from "./../../assets/shutdown.png"
 import axios from 'axios';
 import logo from "./../Navbar/easybook-logo.png"
 
 function Navbar() {
-  const [address,setAddress]=useState('')
+  const [address, setAddress] = useState('')
   const [user, setUser] = useState({});
- 
+
 
   const fetchLocation = () => {
     if ('geolocation' in navigator) {
@@ -37,18 +37,18 @@ function Navbar() {
     }
   }
 
-
-  useEffect(()=>{
+  const admin = JSON.parse(localStorage.getItem("admin") || "{}")
+  useEffect(() => {
     const storeUser = JSON.parse(localStorage.getItem('user') || '{}');
     setUser(storeUser);
-    
-  },[])
+
+  }, [])
   return (
 
     <nav class="navbar ppn navbar-expand-lg color-bg">
       <div className="container-fluid">
         <Link className="navbar-brand  fs-5 color" to="/">
-        <img src={weblogo} className='img-logo'/>Easy Booking</Link>
+          <img src={weblogo} className='img-logo' />Easy Booking</Link>
         <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon "></span>
         </button>
@@ -63,41 +63,42 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link me-5 color font-size" aria-current="page" to="/about">About</Link>
             </li>
-            {user.email ? null : <> <li className="nav-item">
+            {user.email || admin.email ? null : <> <li className="nav-item">
               <Link className="nav-link me-5 color font-size" aria-current="page" to="/login">Login</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link me-5 color font-size" aria-current="page" to="/signup">SignUp</Link>
-            </li>
+              <li className="nav-item">
+                <Link className="nav-link me-5 color font-size" aria-current="page" to="/signup">SignUp</Link>
+              </li>
+
+            </>}
             <li className="nav-item">
               <Link className="nav-link me-5 color" aria-current="page" to="/adminlogin"><img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="" className='img-admin' /><p className='admin-text'>Admin</p></Link>
             </li>
-</>}
           </ul>
           <form class="d-flex" role="search">
-       
-        {/* <button class="btn btn-search" type="button" onClick={fetchLocation}>Search</button> */}
-        </form>
-        {/* <form class="d-flex" role="search">
+
+            {/* <button class="btn btn-search" type="button" onClick={fetchLocation}>Search</button> */}
+          </form>
+          {/* <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search Prefered" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> */}
-        <div className='logout-text font-size'>
-          <span className='ms-3'>Hello,</span> {user.name || 'user!'}
-          {user?.name ? 
-          (<span onClick={()=>{
-            localStorage.removeItem('user');
-            window.location.href="/login"
-          }}>
-            <img src={logoutImg} className='logoutimg' alt=''/>
-          </span>)
-          : 
-          null
-          }
+          <div className='logout-text font-size'>
+            <span className='ms-3'>Hello,</span> {user.name || admin.name || 'user!'}
+            {user?.name || admin?.name ?
+              (<span onClick={() => {
+                localStorage.removeItem('user' && 'admin');
+                window.location.href = "/login"
+              }}>
+                <img src={logoutImg} className='logoutimg' alt='' />
+              </span>)
+              :
+              null
+            }
 
 
-          
-        </div>
+
+          </div>
         </div>
       </div>
     </nav>
