@@ -160,6 +160,7 @@ function AdminDashboard() {
               movieType={movieType}
               title={title}
               language={language}
+              remove={()=>{remove(_id)}}
             />
           })
         }

@@ -87,7 +87,8 @@ function Navbar() {
             <span className='ms-3'>Hello,</span> {user.name || admin.name || 'user!'}
             {user?.name || admin?.name ?
               (<span onClick={() => {
-                localStorage.removeItem('user' && 'admin');
+                localStorage.removeItem('user');
+                localStorage.removeItem('admin');
                 window.location.href = "/login"
               }}>
                 <img src={logoutImg} className='logoutimg' alt='' />
