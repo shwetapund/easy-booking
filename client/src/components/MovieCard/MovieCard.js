@@ -17,7 +17,7 @@ function MovieCard({ _id, Imageurl, rating, movieType, title,language ,remove}) 
             onClick={()=>{remove(_id)}} className="delete-btn"
            >❌</span></>:null}
           <span className="movietype">{movieType}</span>
-           <Link to={`/bookingTicket/${_id}`} className="link"> BOOK TICKET</Link>
+           <Link to={`/bookseat/${_id}`} className="link"> BOOK TICKET</Link>
           
         </div>
         
