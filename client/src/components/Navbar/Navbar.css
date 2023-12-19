@@ -52,12 +52,6 @@
 .btn-search:hover{
     background-color: red !important;
 }
-.logo-img{
-    height: 100px;
-   margin: 0;
-   padding: 0;
-}
-
 @media screen and (max-width:768px){
     .toggle-after{
         color: white !important;

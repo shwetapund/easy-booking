@@ -1,42 +1,40 @@
-import { Schema,model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const movieSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-  Imageurl:{
-    type:String,
-    required:true
+  Imageurl: {
+    type: String,
+    required: true
   },
   duration: {
-    type: Number,
+    type: String,
     required: true,
   },
   releaseDate: {
-    type: Date,
-   
+    type: String,
+
   },
-  language:{
-type:String
+  language: {
+    type: String
   },
   movieType: {
     type: String,
-    enum : ['drama','action','horror','other'],
-    default :'other'
+    default: 'other'
   },
   rating: {
-    type: Number,
+    type: String,
   },
-  description:{
-    type:String
+  description: {
+    type: String
   }
-   
 },
-{
+  {
     timestamps: true,
 
-});
+  });
 
 const Movie = model('Movie', movieSchema);
 

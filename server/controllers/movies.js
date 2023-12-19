@@ -3,9 +3,6 @@ import Book from "../models/Book.js";
 
 const addMovie = async (req,res)=>{
     const {title,Imageurl,duration,releaseDate,movieType,rating,description,language}=req.body;
-    // if(!title||!Imageurl||!duration||!releaseDate||!movieType||!rating||!description){
-    //     res.status(400).send({msg:"All fields are required"})
-    // }
     const adddMovie= new Movie({
         title:title,
         Imageurl:Imageurl,
@@ -30,6 +27,15 @@ const addMovie = async (req,res)=>{
             message:err.message
         })
     }
+}
+
+const delMovie = async (req, res) => {
+    const { id } = req.params;
+    await Movie.deleteOne({ _id:id })
+    res.json({
+        message: "Movie Delete Successfully",
+        success: true
+    })
 }
 
 const getAllMovies= async(req,res)=>{
@@ -121,6 +127,6 @@ const getuserbook =  async (req, res) => {
 }
 
 
-export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie, getMovieById}
+export {addMovie,getAllMovies,searchMovie,getuserbook,bookmovie, getMovieById,delMovie}
 
 

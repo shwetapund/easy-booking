@@ -21,7 +21,7 @@ export default function Footer() {
 "Easy Booking helps you book tickets easily! Choose your movie, pick the theater, and simply select your seat—golden, silver, or VIP. It's quick and easy to book your favorite seats with just a few clicks, without any hassle.And also to select the Time according to user requirement."</p>
         </div>
         <div className='col-lg-2'>
-            <h4>Click here🖐</h4>
+            <h4 className='quickLink-text'>Click here🖐</h4>
            <div className='links-container'>
            <Link to="/" className='link-text'>Home</Link>
             <Link to="/about" className='link-text'>About</Link>
@@ -31,7 +31,7 @@ export default function Footer() {
            </div>
         </div>
         <div className="col-lg-4">
-        <h4 className='contact-text'>Contact 📞</h4>
+        <h4 className='contact-text'>Contact ☎</h4>
          <p className='mt-5 mob-text'>Mob 📞: 8393273255</p>
          <p className='mail-text'>Gmail 📧: easybooking@gmail.com</p>
           <div className="contact-container mt-4">
