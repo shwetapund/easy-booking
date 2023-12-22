@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BookSeatNo.css';
 import { useParams } from 'react-router-dom';
+import movieimg from './movie.png'
 
 const BookSeatNo = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -71,17 +72,30 @@ const BookSeatNo = () => {
   };
 
   return (
-    <div className="movie-seat-booking">
-      <div className="seat-container">{renderSeats()}   <div className='screen'> <p className='text-center'>Screen This Way</p> </div> </div>
+    <div className='movie-container'>
+
+   <div className='left-div'>
+<img src={movieimg} className='movie-img' />
+   </div >
+   <div className='right-div'>
+   <div className="movie-seat-booking">
+      <div className="seat-container">{renderSeats()}  
+      
+       <div className='screen'> <p className='text-center'>Screen This Way</p> </div> </div>
+ 
+
       <div className="selected-seats">
 
-     <h2>selected Seat</h2>
-        <p>{selectedSeats.join(', ')}</p>
+     <h2 className='sected-heading'>Selected Seat: </h2>
+        <p className='selcted-seats'>{selectedSeats.join(', ')}</p>
        
-          <button onClick={disableChangeSeats} type='button'>Go to Booking Page</button>
+          <button onClick={disableChangeSeats} type='button' className='booking-botton'>Go to Booking Page</button>
      </div>
        
     
+    </div>
+   </div>
+   
     </div>
   );
 };
