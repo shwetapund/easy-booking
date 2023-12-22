@@ -12,6 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AdminLogin from './views/AdminLogin/AdminLogin';
 import AdminDashboard from './views/AdminDashboard/AdminDashboard';
+import BookSeatNo from './views/BookSeatNo/BookSeatNo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -48,8 +49,12 @@ const router = createBrowserRouter([
   element: <BookingTicket/>
 },
 {
-  path:'admin-dashboard',
+  path:'/admin-dashboard',
   element:<AdminDashboard/>
+},
+{
+  path:'/bookseat/:id',
+  element:<BookSeatNo/>
 }
 
 ])

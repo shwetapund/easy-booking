@@ -28,6 +28,8 @@ function BookingTicket() {
     }
     useEffect(() => {
         loadMovie();
+       const getSeatNo=JSON.parse(localStorage.getItem('selectedSeats'),"{}")
+       setSelectedSeats(getSeatNo)
     }, [])
 
     const booking = async () => {
@@ -48,6 +50,8 @@ function BookingTicket() {
             alert(response?.data?.message);
 
             if (response?.data?.success === true) {
+
+                localStorage.removeItem('selectedSeats')
 
                 window.location.href = '/booking';
             }
@@ -70,14 +74,6 @@ function BookingTicket() {
 
     }, [])
 
- const handleSeatClick = (seatNumber) => {
-
-        if (selectedSeats.includes(seatNumber)) {
-            setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
-        } else {
-            setSelectedSeats([...selectedSeats, seatNumber]);
-        }
-    };
 
 const handleSelectCity = (e)=>{
     setSelectedCity(e.target.value);
@@ -212,44 +208,7 @@ const theatre = selectedCity ? theaterData[selectedCity] : [];
                         </div>
 
 
-                        <div className='seat-container'>
-                            <p className='chooseseat'>Choose Your Seat</p>
-                            <div className='row-container'>
-                                {[" 01", " 02", " 03", " 04", " 05"].map((seat) => (
-                                    <p
-                                        value={selectedSeats}
-                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
-                                        onClick={() => { handleSeatClick(seat) }}
-                                    >
-                                        {seat}
-                                    </p>
-                                ))}
-                            </div>
-
-
-                            <div className='row-container'>
-                                {[" 06", " 07", " 08", " 09", " 10"].map((seat) => (
-                                    <p
-                                        value={selectedSeats}
-                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
-                                        onClick={() => { handleSeatClick(seat) }}
-                                    >
-                                        {seat}
-                                    </p>
-                                ))}
-                            </div>
-                            <div className='row-container'>
-                                {[" 11", " 12", " 13", " 14", " 15"].map((seat) => (
-                                    <p
-                                        value={selectedSeats}
-                                        className={`one-seat ${selectedSeats.includes(seat) ? 'selected' : ''}`}
-                                        onClick={() => { handleSeatClick(seat) }}
-                                    >
-                                        {seat}
-                                    </p>
-                                ))}
-                            </div>
-                        </div>
+                     
 
                     </div>
                 </div>
