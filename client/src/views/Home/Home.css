@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #fff;
-    margin: 1rem 0;   
+    margin: 1rem auto;  
+    width: 1300px; 
 }
 .input-box {
     display: block;
@@ -34,7 +35,9 @@
     margin-left: 30px;
     margin-top: 50px;
     margin-bottom: 30px;
-    
+    font-size: 25px;
+    margin-left: 150px;
+    font-weight: bold;
 }
 .long-img{
     display: block;

@@ -5,7 +5,7 @@
     color:rgb(0, 255, 21);
 }
 .color:hover{
-    color: red !important;
+    color: black !important;
 }
 .color{
     color: white !important;
@@ -36,7 +36,7 @@
   
 }
 .color-bg{
-    background-color:#000066 !important;
+    background-color: #ff1a1a !important;
 }
 .logoutimg{
     height: 30px;
@@ -50,7 +50,7 @@
     border: 0.5px solid red !important;
 }
 .btn-search:hover{
-    background-color: red !important;
+    background-color: #ff1a1a !important;
 }
 @media screen and (max-width:768px){
     .toggle-after{

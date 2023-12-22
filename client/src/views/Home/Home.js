@@ -33,16 +33,12 @@ function Home() {
 
       const horrorMoviesData = movieData.filter(movie => movie.movieType === "Horror");
       setHorror(horrorMoviesData)
-
-
-
-
     } catch (err) {
       console.error(err.message);
     }
   }
 
-  console.log("Action =", action);
+ 
 
   const searchMovie = async () => {
     if (search === '') {
@@ -92,7 +88,7 @@ function Home() {
 
       <h1 className='now-showing text-center mt-5 '>NOW STREAMING</h1>
 
-      <h2 className='action-heading'>Latest Action Movies🎬</h2>
+      <h2 className='action-heading'>LATEST ACTION MOVIES🎬</h2>
       <div className='show-movie'>
         {
           action?.map((obj, i) => {
@@ -110,7 +106,7 @@ function Home() {
         }
       </div>
 
-      <h2 className='action-heading'>Most Popular Drama Movies 🎭</h2>
+      <h2 className='action-heading'>MOST POPULAR DRAMA MOVIES🎭</h2>
       <div className='show-movie'>
         {
           drama?.map((obj, i) => {
@@ -128,7 +124,7 @@ function Home() {
         }
       </div>
 
-      <h2 className='action-heading'>Horror Movies 😱</h2>
+      <h2 className='action-heading'>HORROR MOVIES😱</h2>
       <div className='show-movie'>
         {
           horror?.map((obj, i) => {
