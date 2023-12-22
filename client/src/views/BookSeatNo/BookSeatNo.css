@@ -1,6 +1,41 @@
+.movie-img{
+  height: 500px;
+  width: 700px;
+  
+    
+}
+
+.movie-container{
+  padding-top: 50px;
+  display: flex;
+ 
+  justify-content: space-around;
+  height:800px;
+  width: 1200px;
+  margin-left:125px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color:white;
+ 
+  
+  box-shadow: 0px 0px 10px 0.1px lightblue;
+}
+
+ .right-div{
+ 
+  width: 28vw;
+} 
+
+.sected-heading{
+  text-align: center;
+}
+.selcted-seats{
+  text-align: center;
+}
 .movie-seat-booking {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     
   }
   
@@ -28,7 +63,19 @@
     background-color: #61dafb; /* Light blue for selected seats */
     color: #fff;
   }
-  
+  .booking-botton{
+    width: 85%;
+    height: 55px;
+    color: white;
+    border-radius: 10px;
+    background-color:#fc3434;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
   .seat.booked {
     background-color: #ff6961; /* Light red for booked seats */
     color: #fff;
@@ -44,11 +91,8 @@
     margin: 10px 0;
   }
   .screen{
-    margin: 30px auto;
-    margin-left: -200px;
-    height: 50px;
-    width: 1000px;
-    border: 1px solid #ccc;
+    margin: 1px 0;
+   
   }
 .text-center{
     text-align: center;
@@ -56,8 +100,33 @@
     margin-left: -10px;
 }
 .seat-container{
-    width: 50%;
-    height: 80vh;
-    margin: 10px 30px;
+   
+    width: 100%;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+@media screen and (max-width:768px){
+  .movie-img{
+    display: none;
+  }
+  .movie-container{
+    width: 300px;
+        padding: 40px 20px;
+        margin-left:18px;
+        height:1300px;
+  }
+  .right-div{
+
+    width: 60vw;
+    
+  } 
+  .seat-container{
+   
+    width: 90%;
+
+}
+  .booking-botton{
+   font-size: 1.1rem;
+    font-weight: 500;
+  }
+
 }
