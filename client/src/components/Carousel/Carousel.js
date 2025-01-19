@@ -1,5 +1,5 @@
 import React from 'react'
-import img1 from './img2.png'
+import img1 from './img3.avif'
 import img2 from './img3.png'
 import img3 from './img4.png'
 import './Carousel.css'

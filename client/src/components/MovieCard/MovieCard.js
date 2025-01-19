@@ -9,13 +9,12 @@ function MovieCard({ _id, Imageurl, rating, movieType, title,language ,remove}) 
     <>
       <div className="movie-Contanier">
 
-
         <img src={Imageurl} alt="" className="img" />
         <div className="imfo-div">
           <span className="title">{title}</span>
-          {admin.email ? <><span 
+        {admin.email ? <><span 
             onClick={()=>{remove(_id)}} className="delete-btn"
-           >❌</span></>:null}
+           >❌</span></>:null} 
           <span className="movietype">{movieType}</span>
            <Link to={`/bookseat/${_id}`} className="link"> BOOK TICKET</Link>
           

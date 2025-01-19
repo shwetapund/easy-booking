@@ -6,10 +6,8 @@ import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
 import Carousel from '../../components/Carousel/Carousel';
 import Footer from '../../components/Footer/Footer';
-import longImg from "./../Home/horizontal.avif";
+import longImg from "./../Home/courosel image.jpg";
 import bookmob from "./../Home/bookshow.jpg";
-
-
 
 
 function Home() {

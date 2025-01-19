@@ -15,7 +15,7 @@ function AdminDashboard() {
   const [description, setDescription] = useState('');
   const [language, setLanguage] = useState('');
   const [movie, setMovie] = useState([])
-
+ 
 
   const addmovie = async () => {
     try {
@@ -138,11 +138,6 @@ function AdminDashboard() {
           </div>
         </div>
       </div>
-
-
-
-
-
 
       <h2 className='added-heading'>All Added Movie Show Here</h2>
       <hr></hr>
